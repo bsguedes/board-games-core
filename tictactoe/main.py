@@ -6,11 +6,12 @@ from random import sample
 class TicTacToe(Game):
     def __init__(self, parameters):
         Game.__init__(self, parameters)
-        self.name = 'TicTacToe'
+        self.name = 'Tic Tac Toe'
         self.parameters = parameters
         self.X = parameters['X']
         self.Y = parameters['Y']
         self.K = parameters['K']
+        self.readable_parameters = '%s x %s (%s in a row)' % (self.X, self.Y, self.K)
         self.board = None
 
     def setup_game(self):

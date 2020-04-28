@@ -10,5 +10,4 @@ class GameFactory:
             game = TicTacToe(parameters)
         game.max_players = player_count
         game.players = [host_player]
-        game.match_id = randint(11111111, 99999999)
         return game

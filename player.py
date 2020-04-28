@@ -1,4 +1,4 @@
 class Player:
-    def __init__(self, player_name):
+    def __init__(self, player_name, secret):
         self.name = player_name
-        self.secret = 0
+        self.secret = secret

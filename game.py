@@ -8,8 +8,9 @@ class Game(ABC):
         self.name = None
         self.parameters = parameters
         self.current_state_index = 0
+        self.readable_parameters = None
         self.player_states = dict()
-        self.match_id = randint(111111111, 999999999)
+        self.match_id = str(randint(111111111, 999999999))
         self.players = []
         self.max_players = 0
         self.status = 'Lobby'

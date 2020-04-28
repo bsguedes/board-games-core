@@ -15,19 +15,23 @@ __players = dict()
 
 
 @app.route('/register/<string:player_name>', methods=['GET'])
-def home(player_name):
-    __players[player_name] = Player(player_name)
-    return Response(json.dumps({}), mimetype='application/json')
+def register(player_name):
+    secret = str(randint(111111111, 999999999))
+    __players[player_name] = Player(player_name, secret)
+    response_payload = {
+        'Name': player_name,
+        'Secret': secret
+    }
+    return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/match/new/<string:game_name>', methods=['POST'])
-def new_game(game_name):
+@app.route('/match/new/<string:game_name>/<string:secret>', methods=['POST'])
+def new_game(game_name, secret):
     payload = request.get_json()
     options = payload['Options']
-    player_count = payload['Players']
-    player = payload['Player']
-    host_player = __players[player]
-    host_player.secret = randint(111111111, 999999999)
+    player_count = options['MaxPlayers']
+    player_name = payload['Player']
+    host_player = next(p for n, p in __players.items() if p.secret == secret and n == player_name)
     game = GameFactory.create_game(game_name, player_count, options, host_player)
     __hosted_games[game.match_id] = game
     response_payload = {
@@ -41,8 +45,9 @@ def new_game(game_name):
 def matches():
     match_list = [{
         'Game': match.name,
-        'Options': match.parameters,
+        'SetupSummary': match.readable_parameters,
         'MaxPlayers': match.max_players,
+        'HostPlayer': match.players[0].name,
         'CurrentPlayers': [p.name for p in match.players],
         'Status': match.status,
         'MatchId': match.match_id
@@ -55,7 +60,6 @@ def join_match(match_id):
     payload = request.get_json()
     player = payload['Player']
     joining_player = __players[player]
-    joining_player.secret = randint(111111111, 999999999)
     game = __hosted_games[match_id]
     game.players.append(joining_player)
     response_payload = {
@@ -65,7 +69,7 @@ def join_match(match_id):
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/match/<int:match_id>/<int:secret>', methods=['POST'])
+@app.route('/match/<int:match_id>/start/<string:secret>', methods=['POST'])
 def start_game(match_id, secret):
     payload = request.get_json()
     player_name = payload['Player']
@@ -78,7 +82,7 @@ def start_game(match_id, secret):
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/match/<int:match_id>/state/<int:secret>', methods=['GET'])
+@app.route('/match/<int:match_id>/state/<string:secret>', methods=['GET'])
 def get_state(match_id, secret):
     game = __hosted_games[match_id]
     player = next(p for n, p in __players.items() if p.secret == secret)
@@ -92,7 +96,7 @@ def get_state(match_id, secret):
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/match/<int:match_id>/<int:secret>/option', methods=['POST'])
+@app.route('/match/<int:match_id>/option/<string:secret>', methods=['POST'])
 def choose_option(match_id, secret):
     payload = request.get_json()
     game = __hosted_games[match_id]
