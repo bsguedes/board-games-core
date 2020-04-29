@@ -15,13 +15,13 @@ class TicTacToe(Game):
         self.board = None
 
     def setup_game(self):
-        self.board = [[None for _ in range(self.X)] for _ in range(self.Y)]
+        self.board = [[None for _ in range(self.Y)] for _ in range(self.X)]
         return sample(self.players, 1)[0]
 
     def next_player_state(self, player, current_player):
         if self.status == 'Finished':
             winner_secret = self.game_ended()
-            return TicTacToeFinalState(player, winner_secret == player.secret)
+            return TicTacToeFinalState(player, self.board, winner_secret == player.secret)
         return TicTacToePlayerState(player, current_player, self.board, self.X, self.Y)
 
     def apply_option_on_current_state_game(self, player, option):
@@ -42,42 +42,22 @@ class TicTacToe(Game):
         return None
 
     def check_sequence(self, x, y):
-        for i in range(x, x + self.K):
-            secret = self.board[i][y]
-            found = True
-            for j in range(y, y + self.K):
-                if secret != self.board[i][j] or self.board[i][j] is None:
-                    found = False
-                    break
-            if found:
-                return secret
-
         for j in range(y, y + self.K):
             secret = self.board[x][j]
-            found = True
-            for i in range(x, x + self.K):
-                if secret != self.board[i][j] or self.board[i][j] is None:
-                    found = False
-                    break
-            if found:
+            if all([self.board[i][j] == secret for i in range(x, x + self.K)]) and secret is not None:
+                return secret
+
+        for i in range(x, x + self.K):
+            secret = self.board[i][y]
+            if all([self.board[i][j] == secret for j in range(y, y + self.K)]) and secret is not None:
                 return secret
 
         secret = self.board[x][y]
-        found = True
-        for i in range(0, self.K):
-            if secret != self.board[x+i][y+i] or self.board[x + i][y + i] is None:
-                found = False
-                break
-        if found:
+        if all([self.board[x + n][y + n] == secret for n in range(self.K)]) and secret is not None:
             return secret
 
         secret = self.board[x + self.K - 1][y]
-        found = True
-        for i in range(0, self.K):
-            if secret != self.board[x + self.K - 1 - i][y + i] or self.board[x + self.K - 1 - i][y + i] is None:
-                found = False
-                break
-        if found:
+        if all([self.board[x - n][y + n] == secret for n in range(self.K)]) and secret is not None:
             return secret
 
         return None

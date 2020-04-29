@@ -41,10 +41,21 @@ class Game(ABC):
     def load_state_for_player(self, player):
         return self.player_states[player.secret][self.current_state_index]
 
+    def current_player_name(self):
+        return self.expecting_option_from.name if self.expecting_option_from is not None else None
+
+    def current_options(self, player):
+        if self.expecting_option_from is not None and self.expecting_option_from.secret == player.secret:
+            return self.options_from_current_state
+        else:
+            return None
+
     def apply_option_on_current_state(self, player, option_code):
-        valid = option_code in self.options_from_current_state and player.secret == self.expecting_option_from.secret
+        option_codes = [x['OptionCode'] for x in self.options_from_current_state]
+        valid = option_code in option_codes and player.secret == self.expecting_option_from.secret
         if valid:
-            next_player = self.apply_option_on_current_state_game(player, self.options_from_current_state[option_code])
+            option = next(p['Option'] for p in self.options_from_current_state if p['OptionCode'] == option_code)
+            next_player = self.apply_option_on_current_state_game(player, option)
             n = self.current_state_index + 1
             for p in self.players:
                 self.player_states[p.secret][n] = self.next_player_state(p, next_player)

@@ -22,6 +22,7 @@ def register(player_name):
         'Name': player_name,
         'Secret': secret
     }
+    print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
@@ -38,12 +39,13 @@ def new_game(game_name, secret):
         'MatchId': game.match_id,
         'Secret': host_player.secret
     }
+    print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
 @app.route('/matches', methods=['GET'])
 def matches():
-    match_list = [{
+    response_payload = [{
         'Game': match.name,
         'SetupSummary': match.readable_parameters,
         'MaxPlayers': match.max_players,
@@ -52,10 +54,11 @@ def matches():
         'Status': match.status,
         'MatchId': match.match_id
     } for match_id, match in __hosted_games.items()]
-    return Response(json.dumps(match_list), mimetype='application/json')
+    print(response_payload)
+    return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/match/<int:match_id>/join', methods=['POST'])
+@app.route('/match/<string:match_id>/join', methods=['POST'])
 def join_match(match_id):
     payload = request.get_json()
     player = payload['Player']
@@ -66,10 +69,11 @@ def join_match(match_id):
         'MatchId': game.match_id,
         'Secret': joining_player.secret
     }
+    print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/match/<int:match_id>/start/<string:secret>', methods=['POST'])
+@app.route('/match/<string:match_id>/start/<string:secret>', methods=['POST'])
 def start_game(match_id, secret):
     payload = request.get_json()
     player_name = payload['Player']
@@ -79,34 +83,40 @@ def start_game(match_id, secret):
     response_payload = {
         'Player': player.name
     }
+    print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/match/<int:match_id>/state/<string:secret>', methods=['GET'])
+@app.route('/match/<string:match_id>/state/<string:secret>', methods=['GET'])
 def get_state(match_id, secret):
     game = __hosted_games[match_id]
     player = next(p for n, p in __players.items() if p.secret == secret)
     state = game.load_state_for_player(player)
     response_payload = {
+        'StateNo': game.current_state_index,
         'GameStatus': game.status,
         'State': state.as_dict(),
-        'CurrentPlayer': game.expecting_option_from.name,
-        'Options': game.options_from_current_state if game.expecting_option_from.secret == player.secret else None
+        'CurrentPlayer': game.current_player_name(),
+        'Options': game.current_options(player)
     }
+    print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/match/<int:match_id>/option/<string:secret>', methods=['POST'])
+@app.route('/match/<string:match_id>/option/<string:secret>', methods=['POST'])
 def choose_option(match_id, secret):
     payload = request.get_json()
+    print(payload)
     game = __hosted_games[match_id]
     player_name = payload['Player']
     player = next(p for n, p in __players.items() if p.secret == secret and n == player_name)
     option_code = payload['OptionCode']
     valid_move = game.apply_option_on_current_state(player, option_code)
     response_payload = {
+        'Player': player.name,
         'ValidMove': valid_move
     }
+    print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 

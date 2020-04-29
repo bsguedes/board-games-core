@@ -19,7 +19,13 @@ class PlayerState(ABC):
     def your_options(self):
         if self.current_player is None or self.current_player.secret != self.player.secret:
             return None
-        return {str(randint(111111111, 999999999)): option for option in self.your_options_game()}
+        return [
+            {
+                "OptionCode": str(randint(111111111, 999999999)),
+                "Option": option
+            }
+            for option in self.your_options_game()
+        ]
 
     @abstractmethod
     def your_options_game(self):
