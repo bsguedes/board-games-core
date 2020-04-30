@@ -26,6 +26,20 @@ class Game(ABC):
         self.expecting_option_from = first_player
         self.options_from_current_state = self.player_states[first_player.secret][0].options
 
+    def remove_player(self, player):
+        if player.secret == self.players[0].secret:
+            self.status = 'Cancelled'
+            self.max_players = 0
+            self.players = []
+        else:
+            self.players.remove(player)
+
+    def can_be_listed(self, from_lobby):
+        if from_lobby:
+            return self.status in ['Lobby', 'Started']
+        else:
+            return self.status == 'Lobby' and 0 < len(self.players) < self.max_players
+
     @abstractmethod
     def apply_option_on_current_state_game(self, player, option):
         pass
@@ -64,9 +78,3 @@ class Game(ABC):
             self.options_from_current_state = options
             self.current_state_index += 1
         return valid
-
-
-class GameStatus(enum.Enum):
-    Lobby = 1
-    Started = 2
-    Finished = 3

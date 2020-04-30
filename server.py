@@ -1,14 +1,13 @@
 import flask
 import json
 from flask import request
-from game_factory import GameFactory
+from game_factory import create_game
 from flask import Response
 from player import Player
 from random import randint
 
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
 
 __hosted_games = dict()
 __players = dict()
@@ -33,7 +32,7 @@ def new_game(game_name, secret):
     player_count = options['MaxPlayers']
     player_name = payload['Player']
     host_player = next(p for n, p in __players.items() if p.secret == secret and n == player_name)
-    game = GameFactory.create_game(game_name, player_count, options, host_player)
+    game = create_game(game_name, player_count, options, host_player)
     __hosted_games[game.match_id] = game
     response_payload = {
         'MatchId': game.match_id,
@@ -43,8 +42,9 @@ def new_game(game_name, secret):
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/matches', methods=['GET'])
-def matches():
+@app.route('/matches/<int:full>', methods=['GET'])
+def matches(full):
+    from_lobby = full > 0
     response_payload = [{
         'Game': match.name,
         'SetupSummary': match.readable_parameters,
@@ -53,7 +53,7 @@ def matches():
         'CurrentPlayers': [p.name for p in match.players],
         'Status': match.status,
         'MatchId': match.match_id
-    } for match_id, match in __hosted_games.items()]
+    } for match_id, match in __hosted_games.items() if match.can_be_listed(from_lobby)]
     print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
@@ -80,6 +80,20 @@ def start_game(match_id, secret):
     game = __hosted_games[match_id]
     player = next(p for n, p in __players.items() if p.secret == secret and n == player_name)
     game.start_game()
+    response_payload = {
+        'Player': player.name
+    }
+    print(response_payload)
+    return Response(json.dumps(response_payload), mimetype='application/json')
+
+
+@app.route('/match/<string:match_id>/quit/<string:secret>', methods=['POST'])
+def quit_game(match_id, secret):
+    payload = request.get_json()
+    player_name = payload['Player']
+    game = __hosted_games[match_id]
+    player = next(p for n, p in __players.items() if p.secret == secret and n == player_name)
+    game.remove_player(player)
     response_payload = {
         'Player': player.name
     }

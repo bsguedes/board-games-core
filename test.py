@@ -1,4 +1,4 @@
-from tictactoe.main import TicTacToe
+from tictactoe.tictactoe import TicTacToe
 from player import Player
 
 

@@ -1,5 +1,6 @@
 from game import Game
-from tictactoe.states import TicTacToePlayerState, TicTacToeFinalState
+from tictactoe.game_state import TicTacToePlayerState
+from tictactoe.final_state import TicTacToeFinalState
 from random import sample
 
 
