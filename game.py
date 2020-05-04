@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from random import randint
-import enum
 
 
 class Game(ABC):

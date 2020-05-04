@@ -36,21 +36,29 @@ def new_game(game_name, secret):
     __hosted_games[game.match_id] = game
     response_payload = {
         'MatchId': game.match_id,
+        'Game': game.name,
         'Secret': host_player.secret
     }
     print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-@app.route('/matches/<int:full>', methods=['GET'])
+@app.route('/matches/<int:full>', methods=['POST'])
 def matches(full):
+    payload = request.get_json()
+    player_name = payload['Player']
+    ping = payload['Ping']
     from_lobby = full > 0
+    player = next((p for n, p in __players.items() if n == player_name), None)
+    if player is not None:
+        player.ping = int(ping)
     response_payload = [{
         'Game': match.name,
         'SetupSummary': match.readable_parameters,
         'MaxPlayers': match.max_players,
         'HostPlayer': match.players[0].name,
         'CurrentPlayers': [p.name for p in match.players],
+        'CurrentPings': [p.ping for p in match.players],
         'Status': match.status,
         'MatchId': match.match_id
     } for match_id, match in __hosted_games.items() if match.can_be_listed(from_lobby)]
