@@ -9,6 +9,7 @@ __pycache__/
 *$py.class
 
 .idea/
+secrets/
 
 # C extensions
 *.so
