@@ -1,8 +1,9 @@
+from game import Game
 from tictactoe.tictactoe import TicTacToe
 from ce.classificacao_etaria import ClassificacaoEtaria
 
 
-def create_game(game_name, player_count, parameters, host_player):
+def create_game(game_name, player_count, parameters, host_player) -> Game:
     game = None
     if game_name == "tictactoe":
         game = TicTacToe(parameters)

@@ -3,23 +3,25 @@ import json
 from flask import request
 from game_factory import create_game
 from flask import Response
-from player import Player
-from random import randint
+from base_player import PlayerBase
+from game import Game
+from typing import Dict
+from base_common import to_dict
 
 
 app = flask.Flask(__name__)
 
-__hosted_games = dict()
-__players = dict()
+__hosted_games: Dict[str, Game] = dict()
+__players: Dict[str, PlayerBase] = dict()
 
 
 @app.route('/register/<string:player_name>', methods=['GET'])
 def register(player_name):
-    secret = str(randint(111111111, 999999999))
-    __players[player_name] = Player(player_name, secret)
+    new_player = PlayerBase(player_name)
+    __players[player_name] = new_player
     response_payload = {
         'Name': player_name,
-        'Secret': secret
+        'Secret': new_player.secret
     }
     print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
@@ -54,7 +56,7 @@ def matches(full):
         player.ping = int(ping)
     response_payload = [{
         'Game': match.name,
-        'SetupSummary': match.readable_parameters,
+        'SetupSummary': match.readable_parameters(),
         'MaxPlayers': match.max_players,
         'HostPlayer': match.players[0].name,
         'CurrentPlayers': [p.name for p in match.players],
@@ -115,11 +117,11 @@ def get_state(match_id, secret):
     player = next(p for n, p in __players.items() if p.secret == secret)
     state = game.load_state_for_player(player)
     response_payload = {
-        'StateNo': game.current_state_index,
+        'StateNo': game.state_machine.index,
         'GameStatus': game.status,
         'State': state.as_dict(),
         'CurrentPlayer': game.current_player_name(),
-        'Options': game.current_options(player)
+        'Options': to_dict(game.current_options(player))
     }
     print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')

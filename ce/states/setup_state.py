@@ -1,4 +1,4 @@
-from state import PlayerState
+from base_state import PlayerState
 
 
 class SetupState(PlayerState):

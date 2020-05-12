@@ -1,5 +1,5 @@
 from tictactoe.tictactoe import TicTacToe
-from player import Player
+from base_player import PlayerBase
 
 
 def apply_option(game, player, x, y):
@@ -11,9 +11,9 @@ def apply_option(game, player, x, y):
 
 
 parameters = {'X': 4, 'Y': 4, 'K': 3}
-p1 = Player('p1')
+p1 = PlayerBase('p1')
 p1.secret = 1
-p2 = Player('p2')
+p2 = PlayerBase('p2')
 p2.secret = 2
 t = TicTacToe(parameters)
 t.players = [p1, p2]

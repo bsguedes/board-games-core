@@ -1,23 +1,27 @@
 from game import Game
+from base_player import PlayerBase
 from tictactoe.game_state import TicTacToePlayerState
 from tictactoe.final_state import TicTacToeFinalState
 from random import sample
+from typing import List
+from state_machine import GameState
 
 
 class TicTacToe(Game):
     def __init__(self, parameters):
-        Game.__init__(self, parameters)
-        self.name = 'Tic Tac Toe'
-        self.parameters = parameters
-        self.X = parameters['X']
-        self.Y = parameters['Y']
-        self.K = parameters['K']
-        self.readable_parameters = '%s x %s (%s in a row)' % (self.X, self.Y, self.K)
-        self.board = None
+        Game.__init__(self, 'Tic Tac Toe', parameters)
+        self.X: int = parameters['X']
+        self.Y: int = parameters['Y']
+        self.K: int = parameters['K']
+        self.board: List[List[int]] = None
 
     def setup_game(self):
         self.board = [[None for _ in range(self.Y)] for _ in range(self.X)]
-        return sample(self.players, 1)[0]
+        first_player: PlayerBase = sample(self.players, 1)[0]
+        self.state_machine.add(GameState('Play', first_player))
+
+    def readable_parameters(self):
+        return '%s x %s (%s in a row)' % (self.X, self.Y, self.K)
 
     def next_player_state(self, player, current_player):
         if self.status == 'Finished':
@@ -31,8 +35,10 @@ class TicTacToe(Game):
         self.board[x][y] = player.secret
         if self.game_ended():
             self.status = 'Finished'
-            return None
-        return self.players[0] if player.secret == self.players[1].secret else self.players[1]
+            self.state_machine.add(GameState('Over', player))
+        else:
+            next_player = self.players[0] if player.secret == self.players[1].secret else self.players[1]
+            self.state_machine.add(GameState('Play', next_player))
 
     def game_ended(self):
         for i in range(0, self.X - self.K + 1):
