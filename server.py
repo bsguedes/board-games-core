@@ -145,5 +145,6 @@ def choose_option(match_id, secret):
     print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
-if os.environ['DEBUG']:
+
+if 'DEBUG' in os.environ and os.environ['DEBUG']:
     app.run()
