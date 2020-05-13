@@ -144,4 +144,4 @@ def choose_option(match_id, secret):
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
-app.run()
+# app.run()
