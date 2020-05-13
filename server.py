@@ -1,5 +1,6 @@
 import flask
 import json
+import os
 from flask import request
 from game_factory import create_game
 from flask import Response
@@ -47,6 +48,7 @@ def new_game(game_name, secret):
 
 @app.route('/matches/<int:full>', methods=['POST'])
 def matches(full):
+    print([(p, n.name) for p, n in __players.items()])
     payload = request.get_json()
     player_name = payload['Player']
     ping = payload['Ping']
@@ -143,5 +145,5 @@ def choose_option(match_id, secret):
     print(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
-
-# app.run()
+if os.environ['DEBUG']:
+    app.run()
