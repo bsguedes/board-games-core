@@ -35,6 +35,13 @@ def register(player_name):
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
+@app.route('/players', methods=['GET'])
+def players():
+    response_payload = [{'Player': n} for n, _ in __players.items()]
+    app.logger.info(response_payload)
+    return Response(json.dumps(response_payload), mimetype='application/json')
+
+
 @app.route('/match/new/<string:game_name>/<string:secret>', methods=['POST'])
 def new_game(game_name, secret):
     payload = request.get_json()
