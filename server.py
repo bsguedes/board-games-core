@@ -8,12 +8,19 @@ from base_player import PlayerBase
 from game import Game
 from typing import Dict
 from base_common import to_dict
+import logging
 
 
 app = flask.Flask(__name__)
+logging.basicConfig(level=logging.DEBUG)
 
 __hosted_games: Dict[str, Game] = dict()
 __players: Dict[str, PlayerBase] = dict()
+
+
+@app.route('/', methods=['GET'])
+def home():
+    return Response(json.dumps({'test': 'hello world!'}), mimetype='application/json')
 
 
 @app.route('/register/<string:player_name>', methods=['GET'])
@@ -24,7 +31,7 @@ def register(player_name):
         'Name': player_name,
         'Secret': new_player.secret
     }
-    print(response_payload)
+    app.logger.info(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
@@ -42,7 +49,7 @@ def new_game(game_name, secret):
         'Game': game.name,
         'Secret': host_player.secret
     }
-    print(response_payload)
+    app.logger.info(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
@@ -66,7 +73,7 @@ def matches(full):
         'Status': match.status,
         'MatchId': match.match_id
     } for match_id, match in __hosted_games.items() if match.can_be_listed(from_lobby)]
-    print(response_payload)
+    app.logger.info(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
@@ -81,7 +88,7 @@ def join_match(match_id):
         'MatchId': game.match_id,
         'Secret': joining_player.secret
     }
-    print(response_payload)
+    app.logger.info(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
@@ -95,7 +102,7 @@ def start_game(match_id, secret):
     response_payload = {
         'Player': player.name
     }
-    print(response_payload)
+    app.logger.info(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
@@ -109,7 +116,7 @@ def quit_game(match_id, secret):
     response_payload = {
         'Player': player.name
     }
-    print(response_payload)
+    app.logger.info(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
@@ -125,7 +132,7 @@ def get_state(match_id, secret):
         'CurrentPlayer': game.current_player_name(),
         'Options': to_dict(game.current_options(player))
     }
-    print(response_payload)
+    app.logger.info(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
@@ -142,9 +149,9 @@ def choose_option(match_id, secret):
         'Player': player.name,
         'ValidMove': valid_move
     }
-    print(response_payload)
+    app.logger.info(response_payload)
     return Response(json.dumps(response_payload), mimetype='application/json')
 
 
 if 'DEBUG' in os.environ and os.environ['DEBUG']:
-    app.run()
+    app.run(host='0.0.0.0')
