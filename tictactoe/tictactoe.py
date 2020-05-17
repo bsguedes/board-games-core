@@ -26,7 +26,8 @@ class TicTacToe(Game):
     def next_player_state(self, player, current_player):
         if self.status == 'Finished':
             winner_secret = self.game_ended()
-            return TicTacToeFinalState(player, self.board, winner_secret == player.secret)
+            result = 'Tie' if winner_secret == 'tie' else 'Winner' if winner_secret == player.secret else 'Loser'
+            return TicTacToeFinalState(player, self.board, result)
         return TicTacToePlayerState(player, current_player, self.board, self.X, self.Y)
 
     def apply_option_on_current_state_game(self, player, option):
@@ -41,6 +42,8 @@ class TicTacToe(Game):
             self.state_machine.add(GameState('Play', next_player))
 
     def game_ended(self):
+        if all(all(x is not None for x in y) for y in self.board):
+            return 'tie'
         for i in range(0, self.X - self.K + 1):
             for j in range(0, self.Y - self.K + 1):
                 secret = self.check_sequence(i, j)
@@ -64,7 +67,7 @@ class TicTacToe(Game):
             return secret
 
         secret = self.board[x + self.K - 1][y]
-        if all([self.board[x - n][y + n] == secret for n in range(self.K)]) and secret is not None:
+        if all([self.board[x + self.K - 1 - n][y + n] == secret for n in range(self.K)]) and secret is not None:
             return secret
 
         return None
