@@ -1,9 +1,10 @@
 from ce.components.token_tray import TokenTray
+from ce.components.card import Card
 
 
 class BoardSlot:
     def __init__(self):
-        self.card = None
-        self.cached = 0
-        self.cash = 0
-        self.tokens = TokenTray()
+        self.card: Card = None
+        self.cached: int = 0
+        self.cash: int = 0
+        self.tokens: TokenTray = TokenTray()

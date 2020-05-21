@@ -1,27 +1,28 @@
 from game import Game
-from random import shuffle
+from random import shuffle, sample
+from typing import List
+from ce.player import CEPlayer
+from ce.champions.champion import Channel
 from ce.components.deck import Deck
 from ce.components.stage import Stage
-from ce.components.objectives import ObjectiveBoard
+from ce.components.objective_board import ObjectiveBoard
 from ce.components.bonus import BonusDeck
-from ce.player import CEPlayer
+from ce.db.loader import Loader
 
 
 class ClassificacaoEtaria(Game):
     def __init__(self, parameters):
-        Game.__init__(self, parameters)
-        self.name = 'Classificação Etária'
-        self.parameters = parameters
-        self.readable_parameters = 'Lorem ipsum'
-        self.deck = Deck()
-        self.bonus_cards = BonusDeck()
-        self.objective_board = ObjectiveBoard()
-        self.stage = Stage()
-        self.player_objects = []
-        self.corporations = shuffle(['Globo', 'Record', 'MTV', 'Band', 'SBT'])
+        Game.__init__(self, 'Classificação Etária', parameters)
+        loader: Loader = Loader()
+        self.deck: Deck = Deck(loader.Cards)
+        self.bonus_cards: BonusDeck = BonusDeck(loader.Bonus)
+        self.objective_board: ObjectiveBoard = ObjectiveBoard(loader.Objectives)
+        self.stage: Stage = Stage()
+        self.player_objects: List[CEPlayer] = []
+        self.channels: List[Channel] = loader.Champions
 
     def setup_game(self):
-        self.player_objects = [CEPlayer(player, corp) for player, corp in zip(self.players, self.corporations)]
+        self.player_objects = [CEPlayer(player, sample(corp)[0]) for player, corp in zip(self.players, self.channels)]
         shuffle(self.player_objects)
         for player in self.player_objects:
             player.give_cards(self.deck.draw_cards(5))
@@ -32,4 +33,7 @@ class ClassificacaoEtaria(Game):
         pass
 
     def next_player_state(self, player, current_player):
+        pass
+
+    def readable_parameters(self):
         pass

@@ -1,5 +1,5 @@
 from ce.components.token_tray import TokenTray
-from ce.components.board import Board
+from ce.components.individual_board import Board
 
 
 class CEPlayer:

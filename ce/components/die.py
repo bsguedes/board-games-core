@@ -7,5 +7,5 @@ class Die:
         self.upper_face = None
         self.roll()
 
-    def roll(self):
+    def roll(self) -> None:
         self.upper_face = sample(self.faces, 1)[0]

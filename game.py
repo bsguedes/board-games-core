@@ -11,7 +11,7 @@ class Game(ABC):
     def __init__(self, name: str, parameters: Dict[str, Any]):
         self.name: str = name
         self.parameters: Dict[str, Any] = parameters
-        self.player_states = dict()
+        self.player_states: Dict[str, List[PlayerState]] = dict()
         self.match_id: str = rand_id_gen()
         self.players: List[PlayerBase] = []
         self.max_players: int = 0

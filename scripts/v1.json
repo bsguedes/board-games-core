@@ -5220,7 +5220,7 @@
    "ScoreRange1": 3,
    "Range2": "6+",
    "ScoreRange2": 6,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 2,
@@ -5230,7 +5230,7 @@
    "ScoreRange1": 3,
    "Range2": "6+",
    "ScoreRange2": 6,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 3,
@@ -5240,7 +5240,7 @@
    "ScoreRange1": 3,
    "Range2": "6+",
    "ScoreRange2": 6,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 4,
@@ -5250,16 +5250,16 @@
    "ScoreRange1": 3,
    "Range2": "6+",
    "ScoreRange2": 6,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 5,
    "Name": "O Clone",
    "Criterion": "Atrações com atributo Ator",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 2
   },
   {
@@ -5270,16 +5270,16 @@
    "ScoreRange1": 5,
    "Range2": "4+",
    "ScoreRange2": 8,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 7,
    "Name": "Zorra Total",
    "Criterion": "Atrações com atributo Humor",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 2
   },
   {
@@ -5287,9 +5287,9 @@
    "Name": "Bom Dia & Cia",
    "Criterion": "Atrações com atributo Infantil ou Personagem",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 3
   },
   {
@@ -5297,9 +5297,9 @@
    "Name": "Rockgol",
    "Criterion": "Atrações com atributo Músico ou Esportivo",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 2
   },
   {
@@ -5310,7 +5310,7 @@
    "ScoreRange1": 4,
    "Range2": "4+",
    "ScoreRange2": 7,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 11,
@@ -5320,7 +5320,7 @@
    "ScoreRange1": 4,
    "Range2": "5+",
    "ScoreRange2": 7,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 12,
@@ -5330,7 +5330,7 @@
    "ScoreRange1": 5,
    "Range2": "4+",
    "ScoreRange2": 8,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 13,
@@ -5340,7 +5340,7 @@
    "ScoreRange1": 5,
    "Range2": "4+",
    "ScoreRange2": 8,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 14,
@@ -5350,7 +5350,7 @@
    "ScoreRange1": 4,
    "Range2": 5,
    "ScoreRange2": 8,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 15,
@@ -5360,7 +5360,7 @@
    "ScoreRange1": 3,
    "Range2": "4+",
    "ScoreRange2": 8,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 16,
@@ -5370,16 +5370,16 @@
    "ScoreRange1": 4,
    "Range2": 5,
    "ScoreRange2": 8,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 17,
    "Name": "Domingo Legal",
    "Criterion": "Atrações cujo custo contenha {X}",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 2
   },
   {
@@ -5390,7 +5390,7 @@
    "ScoreRange1": 3,
    "Range2": "4+",
    "ScoreRange2": 7,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 19,
@@ -5400,16 +5400,16 @@
    "ScoreRange1": 3,
    "Range2": "4+",
    "ScoreRange2": 8,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 20,
    "Name": "Globo Repórter",
    "Criterion": "Atrações cujo custo contenha {X3}",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 2
   },
   {
@@ -5420,16 +5420,16 @@
    "ScoreRange1": 3,
    "Range2": "8+",
    "ScoreRange2": 7,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 22,
    "Name": "Roda a Roda Jequiti",
    "Criterion": "Atrações cujo custo contenha apenas {X5}",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 2
   },
   {
@@ -5437,9 +5437,9 @@
    "Name": "Passa ou Repassa",
    "Criterion": "Atrações que fazem parte de uma TRUPE, ou são PARCEIROS",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 3
   },
   {
@@ -5450,16 +5450,16 @@
    "ScoreRange1": 3,
    "Range2": "9+",
    "ScoreRange2": 6,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   },
   {
    "ID": 25,
    "Name": "Troféu Imprensa",
    "Criterion": "Atrações que tenham ao menos 4 $ nelas",
    "Range1": "",
-   "ScoreRange1": "",
+   "ScoreRange1": 0,
    "Range2": "",
-   "ScoreRange2": "",
+   "ScoreRange2": 0,
    "ScoreRangeCard": 1
   },
   {
@@ -5470,7 +5470,7 @@
    "ScoreRange1": 4,
    "Range2": "8+",
    "ScoreRange2": 7,
-   "ScoreRangeCard": ""
+   "ScoreRangeCard": 0
   }
  ],
  "Objectives": [
