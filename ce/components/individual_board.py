@@ -4,7 +4,7 @@ from typing import List
 
 class IndividualBoard:
     def __init__(self):
-        self.champion_level: int = 0
-        self.top: List[BoardSlot] = [BoardSlot() for _ in range(5)]
-        self.mid: List[BoardSlot] = [BoardSlot() for _ in range(5)]
-        self.bot: List[BoardSlot] = [BoardSlot() for _ in range(5)]
+        self.ChampionLevel: int = 0
+        self.Top: List[BoardSlot] = [BoardSlot() for _ in range(5)]
+        self.Mid: List[BoardSlot] = [BoardSlot() for _ in range(5)]
+        self.Bot: List[BoardSlot] = [BoardSlot() for _ in range(5)]

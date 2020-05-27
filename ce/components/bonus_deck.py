@@ -15,3 +15,6 @@ class BonusDeck:
         cards = self.cards[len(self.cards)-amount:]
         self.cards = self.cards[:len(self.cards)-amount]
         return cards
+
+    def number_of_cards(self) -> int:
+        return len(self.cards)

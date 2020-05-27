@@ -5,7 +5,7 @@ from base_player import PlayerBase
 
 
 class PlayerState(ABC):
-    def __init__(self, player, current_player):
+    def __init__(self, player: PlayerBase, current_player: PlayerBase):
         self.status = None
         self.player: PlayerBase = player
         self.current_player: PlayerBase = current_player

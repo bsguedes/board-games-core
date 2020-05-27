@@ -5,7 +5,7 @@ from ce.components.card import Card
 from ce.champions.champion import Champion, ChampionLevel
 from ce.objectives.objective import Objective
 from dataclasses import dataclass
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 from collections import defaultdict
 
 
@@ -52,7 +52,7 @@ class Loader:
         }
 
 
-def tuple_range(rg):
+def tuple_range(rg) -> Tuple[int, int]:
     if len(rg) > 0:
         parts = rg.split('-')
         if len(parts) == 2:
@@ -61,4 +61,4 @@ def tuple_range(rg):
             parts[0].replace('+', '')
         return int(parts[0]), 9999
     else:
-        return None
+        return -1, -1

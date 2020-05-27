@@ -3,7 +3,7 @@ from typing import List
 
 
 class GameState:
-    def __init__(self, name, current_player):
+    def __init__(self, name, current_player: PlayerBase):
         self.name: str = name
         self.player: PlayerBase = current_player
 
@@ -22,4 +22,3 @@ class StateMachine:
     def pop(self) -> GameState:
         self.index += 1
         return self.states.pop(0)
-

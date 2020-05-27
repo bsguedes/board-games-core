@@ -5,6 +5,7 @@ from tictactoe.final_state import TicTacToeFinalState
 from random import sample
 from typing import List
 from state_machine import GameState
+from exceptions import InvalidStateException
 
 
 class TicTacToe(Game):
@@ -23,12 +24,15 @@ class TicTacToe(Game):
     def readable_parameters(self):
         return '%s x %s (%s in a row)' % (self.X, self.Y, self.K)
 
-    def next_player_state(self, player, current_player):
-        if self.status == 'Finished':
+    def next_player_state(self, player, current_player, state):
+        if state.name == 'Play':
+            return TicTacToePlayerState(player, current_player, self.board, self.X, self.Y)
+        elif state.name == 'Over':
             winner_secret = self.game_ended()
             result = 'Tie' if winner_secret == 'tie' else 'Winner' if winner_secret == player.secret else 'Loser'
             return TicTacToeFinalState(player, self.board, result)
-        return TicTacToePlayerState(player, current_player, self.board, self.X, self.Y)
+        else:
+            raise InvalidStateException()
 
     def apply_option_on_current_state_game(self, player, option):
         x = option['X']

@@ -3,7 +3,7 @@ from typing import List, Dict, Any
 from base_common import rand_id_gen
 from base_player import PlayerBase
 from base_option import OptionBase
-from state_machine import StateMachine
+from state_machine import GameState, StateMachine
 from base_state import PlayerState
 
 
@@ -23,9 +23,10 @@ class Game(ABC):
     def start_game(self) -> None:
         self.player_states = {p.secret: dict() for p in self.players}
         self.setup_game()
-        first_player = self.state_machine.pop().player
+        state = self.state_machine.pop()
+        first_player = state.player
         for p in self.players:
-            self.player_states[p.secret][0] = self.next_player_state(p, first_player)
+            self.player_states[p.secret][0] = self.next_player_state(p, first_player, state)
         self.status = 'Started'
         self.expecting_option_from = first_player
         self.options_from_current_state = self.player_states[first_player.secret][0].options
@@ -67,7 +68,7 @@ class Game(ABC):
                 next_player = next_state.player
                 n = self.state_machine.index
                 for p in self.players:
-                    self.player_states[p.secret][n] = self.next_player_state(p, next_player)
+                    self.player_states[p.secret][n] = self.next_player_state(p, next_player, next_state)
                 self.expecting_option_from = next_player
                 options = self.player_states[next_player.secret][n].options if next_player is not None else None
                 self.options_from_current_state = options
@@ -82,7 +83,7 @@ class Game(ABC):
         pass
 
     @abstractmethod
-    def next_player_state(self, player: PlayerBase, current_player: PlayerBase):
+    def next_player_state(self, player: PlayerBase, current_player: PlayerBase, state: GameState):
         pass
 
     @abstractmethod

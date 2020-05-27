@@ -24,3 +24,6 @@ class Deck:
         for i in range(len(self.contracts)):
             if self.contracts[i] is None:
                 self.contracts[i] = self.draw_card()
+
+    def number_of_cards(self) -> int:
+        return len(self.cards)
