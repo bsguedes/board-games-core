@@ -22,3 +22,6 @@ class StateMachine:
     def pop(self) -> GameState:
         self.index += 1
         return self.states.pop(0)
+
+    def current_state(self) -> GameState:
+        return self.states[0] if self.has_states() else None

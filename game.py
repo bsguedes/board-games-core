@@ -62,7 +62,7 @@ class Game(ABC):
         valid = option_code in option_codes and player.secret == self.expecting_option_from.secret
         if valid:
             option = next(ob.Option for ob in self.options_from_current_state if ob.OptionCode == option_code)
-            self.apply_option_on_current_state_game(player, option)
+            self.apply_option_on_current_state_game(player, option, self.state_machine.current_state())
             next_state = self.state_machine.pop()
             if next_state is not None:
                 next_player = next_state.player
@@ -75,7 +75,7 @@ class Game(ABC):
         return valid
 
     @abstractmethod
-    def apply_option_on_current_state_game(self, player: PlayerBase, option: Dict[str, Any]):
+    def apply_option_on_current_state_game(self, player: PlayerBase, option: Dict[str, Any], state: GameState):
         pass
 
     @abstractmethod

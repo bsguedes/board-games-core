@@ -34,7 +34,7 @@ class TicTacToe(Game):
         else:
             raise InvalidStateException()
 
-    def apply_option_on_current_state_game(self, player, option):
+    def apply_option_on_current_state_game(self, player, option, state):
         x = option['X']
         y = option['Y']
         self.board[x][y] = player.secret

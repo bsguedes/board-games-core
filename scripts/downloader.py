@@ -20,6 +20,10 @@ def pint(value):
     return int(value) if value != '' else 0
 
 
+def pfloat(value):
+    return float(value) if value != '' else 0
+
+
 def parse_bonus(sheet):
     return [
         {
@@ -62,12 +66,12 @@ def parse_cards(sheet):
             "Year": int(c['Year']),
             "AbilityID": int(c['AbID']),
             "Cost": {
-                "X1": pint(c['X1']),
-                "X2": pint(c['X2']),
-                "X3": pint(c['X3']),
-                "X4": pint(c['X4']),
-                "X5": pint(c['X5']),
-                "X": pint(c['X'])
+                "X1": pfloat(c['X1']),
+                "X2": pfloat(c['X2']),
+                "X3": pfloat(c['X3']),
+                "X4": pfloat(c['X4']),
+                "X5": pfloat(c['X5']),
+                "X": pfloat(c['X'])
             },
             "Gender": c['Gender'],
             "Lore": c['Lore']
