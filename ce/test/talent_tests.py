@@ -53,6 +53,13 @@ class TalentTrayTest(unittest.TestCase):
         options = talent_tray.payment_methods(card)
         self.assertEqual(2, len(options))
 
+    def test_card_cost_8(self):
+        cost = {"X1": 0.25, "X2": 0.25}
+        card = card_factory(cost)
+        talent_tray = talent_tray_factory(0, 1, 1, 0, 1)
+        options = talent_tray.payment_methods(card)
+        self.assertEqual(2, len(options))
+
 
 if __name__ == '__main__':
     unittest.main()

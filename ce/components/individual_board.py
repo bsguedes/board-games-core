@@ -1,6 +1,6 @@
 from ce.components.board_slot import BoardSlot
 from typing import List, Dict
-from ce.common import COLUMN_TO_CASH
+from ce.common import COLUMN_TO_CASH, ROWS
 
 
 class IndividualBoard:
@@ -14,6 +14,9 @@ class IndividualBoard:
                 return i
         return 5
 
+    def row_cost(self, row: str) -> int:
+        return COLUMN_TO_CASH[self.first_free_index(row)]
+
     def top_action(self):
         pass
 
@@ -23,8 +26,8 @@ class IndividualBoard:
     def bot_action(self):
         pass
 
-    def playable(self, row: str):
-        return self.total_cash() >= COLUMN_TO_CASH[self.first_free_index(row)]
+    def playable(self, row: str) -> bool:
+        return self.total_cash() >= self.row_cost(row)
 
     def total_cash(self) -> int:
         return sum(sum(slot.Cash for slot in slots) for row, slots in self.Rows.items())

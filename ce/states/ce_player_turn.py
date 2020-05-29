@@ -18,9 +18,9 @@ class CEPlayerTurn(CECommonState):
 
     def your_options_game(self):
         options = list()
-        options.append({'Action': 'Top', 'Value': self.ce_player.board.top_action()})
-        options.append({'Action': 'Mid', 'Value': self.ce_player.board.mid_action()})
-        options.append({'Action': 'Bottom', 'Value': self.ce_player.board.bot_action()})
+        options.append({'Action': 'TalentHunt', 'Value': self.ce_player.board.top_action()})
+        options.append({'Action': 'ShowAds', 'Value': self.ce_player.board.mid_action()})
+        options.append({'Action': 'RecruitAttractions', 'Value': self.ce_player.board.bot_action()})
         for card, row in self.ce_player.playable_cards():
             options.append({'Action': 'PlayCard', 'Value': card.ID, 'Row': row})
         return options

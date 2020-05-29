@@ -89,7 +89,7 @@ def parse_teams(sheet):
             "Points": int(c['Pontos']),
             "CashCost": c['CustoHabilidade'].count("$"),
             "CardCost": c['CustoHabilidade'].count("{C}"),
-            "TokenCost": {
+            "TalentCost": {
                 "X1": c['CustoHabilidade'].count("{X1}"),
                 "X2": c['CustoHabilidade'].count("{X2}"),
                 "X3": c['CustoHabilidade'].count("{X3}"),

@@ -10,7 +10,7 @@ class ChampionLevel:
     Points: int
     CashCost: int
     CardCost: int
-    TokenCost: Dict[str, int]
+    TalentCost: Dict[str, int]
     Ability: Ability
 
 

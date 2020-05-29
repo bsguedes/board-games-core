@@ -5,7 +5,8 @@ from ce.components.talent_tray import TalentTray
 from ce.components.individual_board import IndividualBoard
 from ce.common import ROWS
 from base_player import PlayerBase
-from typing import List, Tuple
+from typing import List
+from ce.states.action_playable_card import PlayableCard
 
 
 class CEPlayer:
@@ -28,8 +29,11 @@ class CEPlayer:
         for card in bonuses:
             self.give_bonus_card(card)
 
-    def playable_cards(self) -> List[Tuple[Card, str]]:
+    def playable_cards(self) -> List[PlayableCard]:
         cards = []
         for row in ROWS:
-            cards += [(card, row) for card in self.hand if self.board.playable(row) and self.talents.playable(card)]
+            for card in self.hand:
+                if self.board.playable(row) and self.talents.playable(card):
+                    for method in self.talents.payment_methods(card):
+                        cards.append(PlayableCard(card.ID, row, self.board.row_cost(row), method))
         return cards

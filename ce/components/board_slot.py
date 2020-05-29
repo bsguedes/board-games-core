@@ -7,7 +7,7 @@ class BoardSlot:
         self.Card: Card = None
         self.Cached: int = 0
         self.Cash: int = 0
-        self.Tokens: TalentTray = TalentTray()
+        self.Talents: TalentTray = TalentTray()
 
     def is_filled(self) -> bool:
         return self.Card is not None

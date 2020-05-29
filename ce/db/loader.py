@@ -46,7 +46,7 @@ class Loader:
         ]
         self.Champions = {
             channel: {champion: [ChampionLevel(b['Level'], b['AbilityName'], b['Points'], b['CashCost'],
-                                               b['CardCost'], b['TokenCost'], self.Abilities[b['AbilityID']])]
+                                               b['CardCost'], b['TalentCost'], self.Abilities[b['AbilityID']])]
                       for champion, b in obj[channel]}
             for channel, obj in group_by(data['Champions'], lambda c: c['Channel']).items()
         }
