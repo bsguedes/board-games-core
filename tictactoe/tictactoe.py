@@ -19,7 +19,7 @@ class TicTacToe(Game):
     def setup_game(self):
         self.board = [[None for _ in range(self.Y)] for _ in range(self.X)]
         first_player: PlayerBase = sample(self.players, 1)[0]
-        self.state_machine.add(GameState('Play', first_player))
+        self.state_machine.add_to_end(GameState('Play', first_player))
 
     def readable_parameters(self):
         return '%s x %s (%s in a row)' % (self.X, self.Y, self.K)
@@ -40,10 +40,10 @@ class TicTacToe(Game):
         self.board[x][y] = player.secret
         if self.game_ended():
             self.status = 'Finished'
-            self.state_machine.add(GameState('Over', player))
+            self.state_machine.add_to_end(GameState('Over', player))
         else:
             next_player = self.players[0] if player.secret == self.players[1].secret else self.players[1]
-            self.state_machine.add(GameState('Play', next_player))
+            self.state_machine.add_to_end(GameState('Play', next_player))
 
     def game_ended(self):
         if all(all(x is not None for x in y) for y in self.board):

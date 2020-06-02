@@ -1,5 +1,5 @@
 from ce.components.board_slot import BoardSlot
-from typing import List, Dict
+from typing import List, Dict, Tuple
 from ce.common import COLUMN_TO_CASH, ROWS
 
 
@@ -17,14 +17,14 @@ class IndividualBoard:
     def row_cost(self, row: str) -> int:
         return COLUMN_TO_CASH[self.first_free_index(row)]
 
-    def top_action(self):
-        pass
+    def top_action(self) -> Tuple[int, int]:
+        return [(1, 0), (1, 1), (2, 0), (2, 1), (3, 0), (3, 1)][self.first_free_index(ROWS[0])]
 
-    def mid_action(self):
-        pass
+    def mid_action(self) -> Tuple[int, int]:
+        return [(2, 0), (2, 1), (3, 0), (3, 1), (4, 0), (4, 1)][self.first_free_index(ROWS[1])]
 
-    def bot_action(self):
-        pass
+    def bot_action(self) -> Tuple[int, int]:
+        return [(1, 0), (1, 1), (2, 0), (2, 1), (3, 0), (3, 1)][self.first_free_index(ROWS[2])]
 
     def playable(self, row: str) -> bool:
         return self.total_cash() >= self.row_cost(row)

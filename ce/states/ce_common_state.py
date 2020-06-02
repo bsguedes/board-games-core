@@ -28,7 +28,8 @@ class CECommonState(PlayerState):
             'ObjectiveBoard': [o.ID for o in self.objective_board.round_objectives],
             'Stage': {
                 'OnStage': [d.upper_face for d in self.stage.on_stage],
-                'OffStage': len(self.stage.off_stage)
+                'OffStage': len(self.stage.off_stage),
+                'CanReroll': self.stage.can_reroll()
             },
             'Opponents': [{
                 'Player': p.player.name,

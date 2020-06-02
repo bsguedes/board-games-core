@@ -24,6 +24,9 @@ class Stage:
             die.roll()
         self.off_stage = []
 
+    def can_reroll(self) -> bool:
+        return len(list(set(self.upper_faces_on_stage()))) == 1
+
     def upper_faces_on_stage(self) -> List[str]:
         return [die.upper_face for die in self.dice]
 

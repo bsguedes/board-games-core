@@ -13,8 +13,18 @@ class StateMachine:
         self.states: List[GameState] = []
         self.index: int = -1
 
-    def add(self, state: GameState):
+    def add_to_end(self, state: GameState):
         self.states.append(state)
+
+    def add_to_next(self, state: GameState):
+        self.states.insert(0, state)
+
+    def add_states_to_next(self, states: List[GameState]):
+        self.states[0:0] = states
+
+    def add_before_first_occurrence_of(self, target_state: str, state: GameState):
+        target = next(s for s in self.states if s.name == target_state)
+        self.states.insert(self.states.index(target), state)
 
     def has_states(self) -> bool:
         return len(self.states) > 0
