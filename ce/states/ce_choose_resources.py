@@ -14,9 +14,6 @@ class CEChooseResources(CECommonState):
                  stage: Stage, player_objects: List[CEPlayer]):
         CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
 
-    def as_dict_game(self):
-        pass
-
     def your_options_game(self):
         bonus_cards = self.ce_player.bonus_cards
         cards = self.ce_player.hand

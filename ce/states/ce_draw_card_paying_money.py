@@ -13,8 +13,20 @@ class CEDrawCardPayingMoney(CECommonState):
                  stage: Stage, player_objects: List[CEPlayer]):
         CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
 
-    def as_dict_game(self):
-        pass
-
     def your_options_game(self):
-        pass
+        options = [{
+            'Action': 'BlindDraw',
+            'CashOrigin': board_card.ID
+        } for board_card in self.ce_player.board.cards_with_cash()]
+        options.append({
+            'Action': 'Cancel'
+        })
+        for card in self.deck.contracts:
+            if card is not None:
+                for board_card in self.ce_player.board.cards_with_cash():
+                    options.append({
+                        'Action': 'DrawFromContracts',
+                        'Card': card.ID,
+                        'CashOrigin': board_card.ID
+                    })
+        return options

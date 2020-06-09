@@ -37,14 +37,18 @@ class CECommonState(PlayerState):
                 'Talents': to_dict(p.talents),
                 'HandCount': len(p.hand),
                 'Board': to_dict(p.board),
-                'BonusCardCount': len(p.bonus_cards)
+                'BonusCardCount': len(p.bonus_cards),
+                'Round': p.current_round,
+                'Turn': p.current_turn
             } for p in self.player_objects if p != self.ce_player],
             'Player': {
                 'Champion': self.ce_player.champion.Name,
                 'Talents': to_dict(self.ce_player.talents),
                 'Hand': [c.ID for c in self.ce_player.hand],
                 'Board': to_dict(self.ce_player.board),
-                'BonusCards': [c.ID for c in self.ce_player.bonus_cards]
+                'BonusCards': [c.ID for c in self.ce_player.bonus_cards],
+                'Round': self.ce_player.current_round,
+                'Turn': self.ce_player.current_turn
             }
         }
         return payload

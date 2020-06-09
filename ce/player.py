@@ -17,6 +17,8 @@ class CEPlayer:
         self.hand: List[Card] = []
         self.board: IndividualBoard = IndividualBoard()
         self.bonus_cards: List[BonusCard] = []
+        self.current_round: int = 0
+        self.current_turn: int = 0
 
     def give_cards(self, cards: List[Card]) -> None:
         for card in cards:

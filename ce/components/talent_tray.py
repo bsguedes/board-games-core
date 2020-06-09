@@ -1,5 +1,6 @@
 from ce.components.card import Card
-from typing import List
+from ce.abilities.ability import Ability
+from typing import List, Dict
 from itertools import combinations
 from ce.common import sort_and_deduplicate
 
@@ -41,6 +42,14 @@ class TalentTray:
 
     def talents_as_array(self) -> List[str]:
         return [i for s in [[t] * self.get_talent(t) for t in ['X1', 'X2', 'X3', 'X4', 'X5']] for i in s]
+
+    def can_pay(self, cost: Dict[str, float]) -> bool:
+        card_helper = Card(1, True, True, True, 1, 'Test', 1, 'L', 1990, Ability('a', 'b', 'c'), cost, 'M')
+        return self.playable(card_helper)
+
+    def payable_methods(self, cost: Dict[str, float]) -> List[List[str]]:
+        card_helper = Card(1, True, True, True, 1, 'Test', 1, 'L', 1990, Ability('a', 'b', 'c'), cost, 'M')
+        return self.payment_methods(card_helper)
 
     def payment_methods(self, card: Card) -> List[List[str]]:
         methods = []

@@ -16,11 +16,17 @@ logging.basicConfig(level=logging.DEBUG)
 
 __hosted_games: Dict[str, Game] = dict()
 __players: Dict[str, PlayerBase] = dict()
+__version: str = '0.0.1'
 
 
 @app.route('/', methods=['GET'])
 def home():
-    return Response(json.dumps({'test': 'hello world!'}), mimetype='application/json')
+    response_payload = {
+        'OnlinePlayers': len(__players.items()),
+        'Games': len(__hosted_games.items()),
+        'ServerVersion': __version
+    }
+    return Response(json.dumps(response_payload), mimetype='application/json')
 
 
 @app.route('/register/<string:player_name>', methods=['GET'])
@@ -146,7 +152,6 @@ def get_state(match_id, secret):
 @app.route('/match/<string:match_id>/option/<string:secret>', methods=['POST'])
 def choose_option(match_id, secret):
     payload = request.get_json()
-    print(payload)
     game = __hosted_games[match_id]
     player_name = payload['Player']
     player = next(p for n, p in __players.items() if p.secret == secret and n == player_name)

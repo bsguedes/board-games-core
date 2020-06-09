@@ -10,13 +10,14 @@ class Stage:
         self.on_stage: List[Die] = self.dice
         self.off_stage: List[Die] = []
 
-    def take_die(self, die: Die) -> str:
-        if die in self.on_stage:
-            self.on_stage.remove(die)
-            self.off_stage.append(die)
+    def take_die(self, face: str) -> None:
+        for die in self.on_stage:
+            if face in die.upper_face:
+                self.on_stage.remove(die)
+                self.off_stage.append(die)
+                break
         if len(self.on_stage) == DICE_COUNT:
             self.reroll_all_dice()
-        return die.upper_face
 
     def reroll_all_dice(self) -> None:
         self.on_stage = self.dice

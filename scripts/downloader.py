@@ -30,9 +30,9 @@ def parse_bonus(sheet):
             "ID": c['ID'],
             "Name": c['Nome'],
             "Criterion": c['Habilidade'],
-            "Range1": c['Range1'],
+            "Range1": str(c['Range1']),
             "ScoreRange1": pint(c['ScoreRange1']),
-            "Range2": c['Range2'],
+            "Range2": str(c['Range2']),
             "ScoreRange2": pint(c['ScoreRange2']),
             "ScoreRangeCard": pint(c['ScoreRangeCard'])
         } for c in sheet[0:]

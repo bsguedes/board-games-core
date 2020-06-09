@@ -23,7 +23,7 @@ class Game(ABC):
     def start_game(self) -> None:
         self.player_states = {p.secret: dict() for p in self.players}
         self.setup_game()
-        state = self.state_machine.pop()
+        state = self.state_machine.current_state()
         first_player = state.player
         for p in self.players:
             self.player_states[p.secret][0] = self.next_player_state(p, first_player, state)
@@ -63,16 +63,24 @@ class Game(ABC):
         if valid:
             option = next(ob.Option for ob in self.options_from_current_state if ob.OptionCode == option_code)
             self.apply_option_on_current_state_game(player, option, self.state_machine.current_state())
-            next_state = self.state_machine.pop()
+            self.evaluate_next_state()
+        return valid
+
+    def evaluate_next_state(self):
+        found_valid_state = False
+        while not found_valid_state:
+            self.state_machine.pop()
+            next_state = self.state_machine.current_state()
             if next_state is not None:
                 next_player = next_state.player
                 n = self.state_machine.index
                 for p in self.players:
                     self.player_states[p.secret][n] = self.next_player_state(p, next_player, next_state)
-                self.expecting_option_from = next_player
                 options = self.player_states[next_player.secret][n].options if next_player is not None else None
-                self.options_from_current_state = options
-        return valid
+                if next_player is None or len(options) > 0:
+                    self.expecting_option_from = next_player
+                    self.options_from_current_state = options
+                    found_valid_state = True
 
     @abstractmethod
     def apply_option_on_current_state_game(self, player: PlayerBase, option: Dict[str, Any], state: GameState):

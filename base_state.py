@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
-from typing import List, Dict
+from typing import List, Dict, Optional
 from base_option import OptionBase
 from base_player import PlayerBase
 
 
 class PlayerState(ABC):
-    def __init__(self, player: PlayerBase, current_player: PlayerBase):
+    def __init__(self, player: PlayerBase, current_player: Optional[PlayerBase]):
         self.status = None
         self.player: PlayerBase = player
         self.current_player: PlayerBase = current_player

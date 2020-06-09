@@ -1,4 +1,4 @@
-COLUMN_TO_CASH = [0, 1, 1, 2, 2]
+COLUMN_TO_CASH = [0, 1, 1, 2, 2, 0]
 ROWS = ['Top', 'Mid', 'Bot']
 
 

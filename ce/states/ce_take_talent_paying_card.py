@@ -13,10 +13,19 @@ class CETakeTalentPayingCard(CECommonState):
                  stage: Stage, player_objects: List[CEPlayer]):
         CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
 
-    def as_dict_game(self):
-        pass
-
     def your_options_game(self):
-        options = []
-
+        options = [{
+            'Action': 'Cancel'
+        }]
+        if self.stage.can_reroll():
+            options.append({'Action': 'Reroll'})
+        for die_face in self.stage.upper_faces_on_stage():
+            for face_option in die_face.split('-'):
+                for card in self.ce_player.hand:
+                    options.append({
+                        'Action': 'TakeDiePayingCard',
+                        'Die': die_face,
+                        'Talent': face_option,
+                        'Card': card.ID
+                    })
         return options

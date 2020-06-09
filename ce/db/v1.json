@@ -4089,7 +4089,7 @@
    "Points": 1,
    "CashCost": 1,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4109,7 +4109,7 @@
    "Points": 2,
    "CashCost": 0,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4129,7 +4129,7 @@
    "Points": 3,
    "CashCost": 0,
    "CardCost": 1,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4149,7 +4149,7 @@
    "Points": 4,
    "CashCost": 2,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4169,7 +4169,7 @@
    "Points": 1,
    "CashCost": 0,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4189,7 +4189,7 @@
    "Points": 2,
    "CashCost": 1,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4209,7 +4209,7 @@
    "Points": 3,
    "CashCost": 0,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4229,7 +4229,7 @@
    "Points": 4,
    "CashCost": 0,
    "CardCost": 2,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4249,7 +4249,7 @@
    "Points": 1,
    "CashCost": 0,
    "CardCost": 1,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4269,7 +4269,7 @@
    "Points": 2,
    "CashCost": 1,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4289,7 +4289,7 @@
    "Points": 3,
    "CashCost": 2,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4309,7 +4309,7 @@
    "Points": 4,
    "CashCost": 0,
    "CardCost": 1,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4329,7 +4329,7 @@
    "Points": 1,
    "CashCost": 1,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4349,7 +4349,7 @@
    "Points": 2,
    "CashCost": 0,
    "CardCost": 1,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4369,7 +4369,7 @@
    "Points": 3,
    "CashCost": 0,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 1,
     "X2": 0,
     "X3": 0,
@@ -4389,7 +4389,7 @@
    "Points": 4,
    "CashCost": 0,
    "CardCost": 1,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4409,7 +4409,7 @@
    "Points": 1,
    "CashCost": 0,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 1,
     "X3": 0,
@@ -4429,7 +4429,7 @@
    "Points": 2,
    "CashCost": 2,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4449,7 +4449,7 @@
    "Points": 3,
    "CashCost": 0,
    "CardCost": 1,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -4469,7 +4469,7 @@
    "Points": 4,
    "CashCost": 3,
    "CardCost": 0,
-   "TokenCost": {
+   "TalentCost": {
     "X1": 0,
     "X2": 0,
     "X3": 0,
@@ -5348,7 +5348,7 @@
    "Criterion": "Atrações cuja programação é apenas {A1}",
    "Range1": "3-4",
    "ScoreRange1": 4,
-   "Range2": 5,
+   "Range2": "5",
    "ScoreRange2": 8,
    "ScoreRangeCard": 0
   },
@@ -5368,7 +5368,7 @@
    "Criterion": "Atrações cuja programação é apenas {A3}",
    "Range1": "3-4",
    "ScoreRange1": 4,
-   "Range2": 5,
+   "Range2": "5",
    "ScoreRange2": 8,
    "ScoreRangeCard": 0
   },

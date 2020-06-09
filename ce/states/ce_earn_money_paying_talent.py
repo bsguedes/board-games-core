@@ -13,8 +13,16 @@ class CEEarnMoneyPayingTalent(CECommonState):
                  stage: Stage, player_objects: List[CEPlayer]):
         CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
 
-    def as_dict_game(self):
-        pass
-
     def your_options_game(self):
-        pass
+        options = []
+        for card in self.ce_player.hand:
+            if card.CurrentCash < card.MaxCash:
+                for talent in self.ce_player.talents.talents_as_array():
+                    options.append({
+                        'Action': 'PlaceMoneyPayingTalent',
+                        'Card': card.ID,
+                        'Talent': talent
+                    })
+        if len(options) > 0:
+            options.append({'Action': 'Cancel'})
+        return options

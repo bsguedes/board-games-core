@@ -32,7 +32,7 @@ class TicTacToe(Game):
             result = 'Tie' if winner_secret == 'tie' else 'Winner' if winner_secret == player.secret else 'Loser'
             return TicTacToeFinalState(player, self.board, result)
         else:
-            raise InvalidStateException()
+            raise InvalidStateException(state.name)
 
     def apply_option_on_current_state_game(self, player, option, state):
         x = option['X']
@@ -46,13 +46,13 @@ class TicTacToe(Game):
             self.state_machine.add_to_end(GameState('Play', next_player))
 
     def game_ended(self):
-        if all(all(x is not None for x in y) for y in self.board):
-            return 'tie'
         for i in range(0, self.X - self.K + 1):
             for j in range(0, self.Y - self.K + 1):
                 secret = self.check_sequence(i, j)
                 if secret is not None:
                     return secret
+        if all(all(x is not None for x in y) for y in self.board):
+            return 'tie'
         return None
 
     def check_sequence(self, x, y):

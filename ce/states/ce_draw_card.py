@@ -13,9 +13,17 @@ class CEDrawCard(CECommonState):
                  stage: Stage, player_objects: List[CEPlayer]):
         CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
 
-    def as_dict_game(self):
-        pass
-
     def your_options_game(self):
-        pass
+        options = [{
+            'Action': 'BlindDraw'
+        }, {
+            'Action': 'Cancel'
+        }]
+        for card in self.deck.contracts:
+            if card is not None:
+                options.append({
+                    'Action': 'DrawFromContracts',
+                    'Card': card.ID
+                })
+        return options
 
