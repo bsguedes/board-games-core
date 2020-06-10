@@ -77,7 +77,7 @@ class Game(ABC):
                 for p in self.players:
                     self.player_states[p.secret][n] = self.next_player_state(p, next_player, next_state)
                 options = self.player_states[next_player.secret][n].options if next_player is not None else None
-                if next_player is None or len(options) > 0:
+                if next_player is None or options is None or len(options) > 0:
                     self.expecting_option_from = next_player
                     self.options_from_current_state = options
                     found_valid_state = True
