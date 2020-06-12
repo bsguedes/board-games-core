@@ -82,7 +82,7 @@ class ClassificacaoEtaria(Game):
                 new_states += optional * [GameState('DrawCardPayingMoney', player)]
                 # add states for possible triggers from other players to happen after turn end
             elif option['Action'] == 'PlayCard':
-                playable_card = option['Card']
+                playable_card = option['PlayableCard']
                 ce_player.board.add_card_to_row(playable_card.ID, playable_card.Row)
                 ce_player.hand.remove(next(c for c in ce_player.hand if c.ID == playable_card.ID))
                 for talent in playable_card.TalentCost:
@@ -147,6 +147,7 @@ class ClassificacaoEtaria(Game):
                 if any(n > 0 for t, n in option['TalentCost']):
                     next_states += [GameState('PayTalents', player, option['TalentCost'])]
                 self.state_machine.add_states_to_next(next_states)
+                ce_player.board.ChampionLevel += 1
         else:
             raise InvalidStateException(state.name)
 

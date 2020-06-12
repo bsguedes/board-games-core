@@ -8,18 +8,28 @@ ROW_SIZE = 5
 class IndividualBoard:
     def __init__(self):
         self.ChampionLevel: int = 0
-        self.Rows: Dict[str, List[BoardSlot]] = {r: [BoardSlot() for _ in range(ROW_SIZE)] for r in ROWS}
+        self.TopRow: List[BoardSlot] = [BoardSlot() for _ in range(ROW_SIZE)]
+        self.MidRow: List[BoardSlot] = [BoardSlot() for _ in range(ROW_SIZE)]
+        self.BotRow: List[BoardSlot] = [BoardSlot() for _ in range(ROW_SIZE)]
 
     def add_card_to_row(self, card_id: int, row: str):
         index = self.first_free_index(row)
-        slot: BoardSlot = self.Rows[row][index]
+        slot: BoardSlot = self.rows(row)[index]
         slot.Card = card_id
 
     def first_free_index(self, row: str) -> int:
         for i in range(ROW_SIZE):
-            if self.Rows[row][i].Card is None:
+            if self.rows(row)[i].Card is None:
                 return i
         return ROW_SIZE
+
+    def rows(self, row: str) -> List[BoardSlot]:
+        if row == 'Top':
+            return self.TopRow
+        elif row == 'Mid':
+            return self.MidRow
+        elif row == 'Bot':
+            return self.BotRow
 
     def row_cost(self, row: str) -> int:
         return COLUMN_TO_CASH[self.first_free_index(row)]
@@ -34,17 +44,18 @@ class IndividualBoard:
         return [(1, 0), (1, 1), (2, 0), (2, 1), (3, 0), (3, 1)][self.first_free_index(ROWS[2])]
 
     def playable(self, row: str) -> bool:
-        fits_in_row = len([s for s in self.Rows[row] if s.Card is not None]) < ROW_SIZE
+        fits_in_row = len([s for s in self.rows(row) if s.Card is not None]) < ROW_SIZE
         can_pay_slot = self.total_cash() >= self.row_cost(row)
         return fits_in_row and can_pay_slot
 
+    def cash_in_row(self, row: str) -> int:
+        return sum(slot.Cash for slot in self.rows(row))
+
     def total_cash(self) -> int:
-        return sum(sum(slot.Cash for slot in slots) for row, slots in self.Rows.items())
+        return self.cash_in_row('Top') + self.cash_in_row('Mid') + self.cash_in_row('Bot')
 
     def cards_with_cash(self) -> List[Optional[int]]:
-        return [slot.Card for row in ROWS for slot in self.Rows[row] if slot.Cash > 0]
+        return [slot.Card for row in ROWS for slot in self.rows(row) if slot.Cash > 0]
 
     def cards_in_board(self) -> List[Optional[int]]:
-        return [slot.Card for row in ROWS for slot in self.Rows[row]]
-
-
+        return [slot.Card for row in ROWS for slot in self.rows(row)]

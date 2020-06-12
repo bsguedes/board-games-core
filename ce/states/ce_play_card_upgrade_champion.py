@@ -15,19 +15,20 @@ class CEPlayCardUpgradeChampion(CECommonState):
 
     def your_options_game(self):
         options = []
-        target_level = self.ce_player.champion.Levels[self.ce_player.board.ChampionLevel]
-        cash_cost = target_level.CashCost
-        talent_cost = target_level.TalentCost
-        card_cost = target_level.CardCost
-        if (cash_cost == 0 or self.ce_player.board.total_cash() >= cash_cost) and \
-           (all(c for t, c in talent_cost.items() if c == 0) or self.ce_player.talents.can_pay(talent_cost)) and \
-           (card_cost == 0 or len(self.ce_player.hand) > 0):
-            options.append({
-                'Action': 'Upgrade',
-                'CardCost': card_cost,
-                'CashCost': cash_cost,
-                'TalentCost': talent_cost
-            })
+        if self.ce_player.board.ChampionLevel < 4:
+            target_level = self.ce_player.champion.Levels[self.ce_player.board.ChampionLevel]
+            cash_cost = target_level.CashCost
+            talent_cost = target_level.TalentCost
+            card_cost = target_level.CardCost
+            if (cash_cost == 0 or self.ce_player.board.total_cash() >= cash_cost) and \
+               (all(c for t, c in talent_cost.items() if c == 0) or self.ce_player.talents.can_pay(talent_cost)) and \
+               (card_cost == 0 or len(self.ce_player.hand) > 0):
+                options.append({
+                    'Action': 'Upgrade',
+                    'CardCost': card_cost,
+                    'CashCost': cash_cost,
+                    'TalentCost': talent_cost
+                })
         if len(options) > 0:
             options.append({'Action': 'Cancel'})
         return options
