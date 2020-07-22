@@ -16,9 +16,11 @@ class CEPayCards(CECommonState):
         self.card_count = args['Count']
 
     def as_dict_game(self):
-        return {
-            'Count': self.card_count,
-        }.update(super().as_dict_game())
+        state_contents = {
+            'Count': self.card_count
+        }
+        state_contents.update(super().as_dict_game())
+        return state_contents
 
     def your_options_game(self):
         options = [

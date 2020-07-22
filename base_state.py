@@ -11,8 +11,10 @@ class PlayerState(ABC):
         self.current_player: PlayerBase = current_player
         self.options: List[OptionBase] = self.your_options()
 
-    def as_dict(self):
-        return self.as_dict_game()
+    def as_dict(self, state_name: str) -> Dict:
+        state_contents = {'StateName': state_name}
+        state_contents.update(self.as_dict_game())
+        return state_contents
 
     def your_options(self):
         if self.current_player is None or self.current_player.secret != self.player.secret:

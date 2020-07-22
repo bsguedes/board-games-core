@@ -141,7 +141,7 @@ def get_state(match_id, secret):
     response_payload = {
         'StateNo': game.state_machine.index,
         'GameStatus': game.status,
-        'State': state.as_dict(),
+        'State': state.as_dict(game.state_machine.current_state().name),
         'CurrentPlayer': game.current_player_name(),
         'Options': to_dict(game.current_options(player))
     }

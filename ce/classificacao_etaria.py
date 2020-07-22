@@ -38,6 +38,7 @@ class ClassificacaoEtaria(Game):
         self.stage: Stage = Stage()
         self.player_objects: List[CEPlayer] = []
         self.channels: List[Channel] = loader.Channels
+        shuffle(self.channels)
 
     def setup_game(self):
         self.player_objects = [CEPlayer(p, sample(c.Champions, 1)[0]) for p, c in zip(self.players, self.channels)]

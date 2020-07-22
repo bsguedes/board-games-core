@@ -15,9 +15,11 @@ class CEPayTalents(CECommonState):
         self.talent_cost = args['Talents']
 
     def as_dict_game(self):
-        return {
-            'Talents': self.talent_cost,
-        }.update(super().as_dict_game())
+        state_contents = {
+            'Talents': self.talent_cost
+        }
+        state_contents.update(super().as_dict_game())
+        return state_contents
 
     def your_options_game(self):
         options = [

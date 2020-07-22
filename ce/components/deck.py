@@ -2,7 +2,7 @@ from random import shuffle
 from typing import List, Optional
 from ce.components.card import Card
 
-NUMBER_OF_CONTRACTS = 3
+NUMBER_OF_CONTRACTS = 4
 
 
 class Deck:

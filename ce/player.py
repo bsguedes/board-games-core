@@ -35,7 +35,7 @@ class CEPlayer:
         cards = []
         for row in ROWS:
             for card in self.hand:
-                if self.board.playable(row) and self.talents.playable(card):
+                if self.board.playable(card, row) and self.talents.playable(card):
                     for method in self.talents.payment_methods(card):
                         cards.append(PlayableCard(card.ID, row, self.board.row_cost(row), method))
         return cards

@@ -1,6 +1,8 @@
 from ce.components.board_slot import BoardSlot
-from typing import List, Dict, Tuple, Optional
+from typing import List, Tuple, Optional
 from ce.common import COLUMN_TO_CASH, ROWS
+from ce.components.card import Card
+
 
 ROW_SIZE = 5
 
@@ -34,19 +36,20 @@ class IndividualBoard:
     def row_cost(self, row: str) -> int:
         return COLUMN_TO_CASH[self.first_free_index(row)]
 
-    def top_action(self) -> Tuple[int, int]:
-        return [(1, 0), (1, 1), (2, 0), (2, 1), (3, 0), (3, 1)][self.first_free_index(ROWS[0])]
+    def top_action(self) -> Tuple[int, int, int]:
+        return [(1, 0, 0), (1, 1, 1), (2, 0, 2), (2, 1, 3), (3, 0, 4), (3, 1, 5)][self.first_free_index(ROWS[0])]
 
-    def mid_action(self) -> Tuple[int, int]:
-        return [(2, 0), (2, 1), (3, 0), (3, 1), (4, 0), (4, 1)][self.first_free_index(ROWS[1])]
+    def mid_action(self) -> Tuple[int, int, int]:
+        return [(2, 0, 0), (2, 1, 1), (3, 0, 2), (3, 1, 3), (4, 0, 4), (4, 1, 5)][self.first_free_index(ROWS[1])]
 
-    def bot_action(self) -> Tuple[int, int]:
-        return [(1, 0), (1, 1), (2, 0), (2, 1), (3, 0), (3, 1)][self.first_free_index(ROWS[2])]
+    def bot_action(self) -> Tuple[int, int, int]:
+        return [(1, 0, 0), (1, 1, 1), (2, 0, 2), (2, 1, 3), (3, 0, 4), (3, 1, 5)][self.first_free_index(ROWS[2])]
 
-    def playable(self, row: str) -> bool:
+    def playable(self, card: Card, row: str) -> bool:
         fits_in_row = len([s for s in self.rows(row) if s.Card is not None]) < ROW_SIZE
         can_pay_slot = self.total_cash() >= self.row_cost(row)
-        return fits_in_row and can_pay_slot
+        compatible = (row == 'Top' and card.TopRow) or (row == 'Mid' and card.MidRow) or (row == 'Bot' and card.BotRow)
+        return fits_in_row and can_pay_slot and compatible
 
     def cash_in_row(self, row: str) -> int:
         return sum(slot.Cash for slot in self.rows(row))

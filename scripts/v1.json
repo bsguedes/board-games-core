@@ -22,7 +22,8 @@
     "X": 1.0
    },
    "Gender": "TRUPE",
-   "Lore": "Essa família é muito unida, e também muito ouriçada, pan pan pan pan."
+   "Lore": "Essa família é muito unida, e também muito ouriçada, pan pan pan pan.",
+   "ImgPath": "1agrandefamila.jpg"
   },
   {
    "ID": 2,
@@ -46,7 +47,8 @@
     "X": 0
    },
    "Gender": "TRUPE",
-   "Lore": "Ela é muito nossa."
+   "Lore": "Ela é muito nossa.",
+   "ImgPath": "2apracaenossa.jpg"
   },
   {
    "ID": 3,
@@ -70,7 +72,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Aqui você ganha bica na costela, voleio na nuca, tapa na cara, telefone e etc, tá certo?"
+   "Lore": "Aqui você ganha bica na costela, voleio na nuca, tapa na cara, telefone e etc, tá certo?",
+   "ImgPath": "3adenonis.jpg"
   },
   {
    "ID": 4,
@@ -94,7 +97,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "3adrianegalisteu.jpg"
   },
   {
    "ID": 5,
@@ -118,7 +122,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "VÁ A MERDAAAA."
+   "Lore": "VÁ A MERDAAAA.",
+   "ImgPath": "4alborghetti.jpg"
   },
   {
    "ID": 6,
@@ -142,7 +147,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "5amauryjr.jpg"
   },
   {
    "ID": 7,
@@ -166,7 +172,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "6anahickmann.jpg"
   },
   {
    "ID": 8,
@@ -190,7 +197,8 @@
     "X": 1.0
    },
    "Gender": "f",
-   "Lore": "Hmmmmmm."
+   "Lore": "Hmmmmmm.",
+   "ImgPath": "7anamariabraga.jpg"
   },
   {
    "ID": 9,
@@ -214,7 +222,8 @@
     "X": 2.0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "8andremarques.jpg"
   },
   {
    "ID": 10,
@@ -238,7 +247,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "9angelica.jpg"
   },
   {
    "ID": 11,
@@ -262,7 +272,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "A regra é clara."
+   "Lore": "A regra é clara.",
+   "ImgPath": "10arnaldo.jpg"
   },
   {
    "ID": 12,
@@ -286,7 +297,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Antes que eu não te passo a lambida, no pescoço."
+   "Lore": "Antes que eu não te passo a lambida, no pescoço.",
+   "ImgPath": "11away.jpg"
   },
   {
    "ID": 13,
@@ -310,7 +322,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Saí de casa, comi pra caralho. BIRL!"
+   "Lore": "Saí de casa, comi pra caralho. BIRL!",
+   "ImgPath": "12bambam.jpg"
   },
   {
    "ID": 14,
@@ -334,7 +347,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Beeeeetooo carreeirooooo plim blum, plim blim blim blum blum."
+   "Lore": "Beeeeetooo carreeirooooo plim blum, plim blim blim blum blum.",
+   "ImgPath": "12betocarrero.jpg"
   },
   {
    "ID": 15,
@@ -358,7 +372,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Puta mundo injusto meo."
+   "Lore": "Puta mundo injusto meo.",
+   "ImgPath": "13boca.jpg"
   },
   {
    "ID": 16,
@@ -382,7 +397,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "14boris.jpg"
   },
   {
    "ID": 17,
@@ -406,7 +422,8 @@
     "X": 1.0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "15bruna.jpg"
   },
   {
    "ID": 18,
@@ -430,7 +447,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "É nóis, sapinhooô."
+   "Lore": "É nóis, sapinhooô.",
+   "ImgPath": "16cabecao.jpg"
   },
   {
    "ID": 19,
@@ -454,7 +472,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "I de Iscola ou E de Esqueiro?"
+   "Lore": "I de Iscola ou E de Esqueiro?",
+   "ImgPath": "17carla.jpg"
   },
   {
    "ID": 20,
@@ -478,7 +497,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Haaaa haa ha."
+   "Lore": "Haaaa haa ha.",
+   "ImgPath": "18carlosalberto.jpg"
   },
   {
    "ID": 21,
@@ -502,7 +522,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "EU SOU RICA!!!"
+   "Lore": "EU SOU RICA!!!",
+   "ImgPath": "19carolina.jpg"
   },
   {
    "ID": 22,
@@ -526,7 +547,8 @@
     "X": 2.0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "20casagrande.jpg"
   },
   {
    "ID": 23,
@@ -550,7 +572,8 @@
     "X": 0
    },
    "Gender": "TRUPE",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "21casseta.jpg"
   },
   {
    "ID": 24,
@@ -574,7 +597,8 @@
     "X": 0
    },
    "Gender": "TRUPE",
-   "Lore": "Bum bum bum, castelo Rá-Tim-Bum."
+   "Lore": "Bum bum bum, castelo Rá-Tim-Bum.",
+   "ImgPath": "22castelo.jpeg"
   },
   {
    "ID": 25,
@@ -598,7 +622,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Passa ou repassa?"
+   "Lore": "Passa ou repassa?",
+   "ImgPath": "23celso.jpg"
   },
   {
    "ID": 26,
@@ -622,7 +647,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "24chacrinha.jpg"
   },
   {
    "ID": 27,
@@ -646,7 +672,8 @@
     "X": 0
    },
    "Gender": "TRUPE",
-   "Lore": "Isso, isso, isso, isso!"
+   "Lore": "Isso, isso, isso, isso!",
+   "ImgPath": "25chaves.jpg"
   },
   {
    "ID": 28,
@@ -670,7 +697,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "26chico.jpg"
   },
   {
    "ID": 29,
@@ -694,7 +722,8 @@
     "X": 1.0
    },
    "Gender": "TRUPE",
-   "Lore": "Achou que não iria ter carta do Choque de Cultura? Achou errado otário."
+   "Lore": "Achou que não iria ter carta do Choque de Cultura? Achou errado otário.",
+   "ImgPath": "27choque.jpg"
   },
   {
    "ID": 30,
@@ -718,7 +747,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Jabulaaaani..."
+   "Lore": "Jabulaaaani...",
+   "ImgPath": "28cid.jpg"
   },
   {
    "ID": 31,
@@ -742,7 +772,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "29claudialeitte.jpg"
   },
   {
    "ID": 32,
@@ -766,7 +797,8 @@
     "X": 1.0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "30claudiaraia.jpg"
   },
   {
    "ID": 33,
@@ -790,7 +822,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "HOJE NÃO! HOJE NÃO! Hoje sim.. hoje sim?"
+   "Lore": "HOJE NÃO! HOJE NÃO! Hoje sim.. hoje sim?",
+   "ImgPath": "31cleber.jpg"
   },
   {
    "ID": 34,
@@ -814,7 +847,8 @@
     "X": 0
    },
    "Gender": "TRUPE",
-   "Lore": "CRUJ, CRUJ, CRUJ, tchau!"
+   "Lore": "CRUJ, CRUJ, CRUJ, tchau!",
+   "ImgPath": "32cruj.jpg"
   },
   {
    "ID": 35,
@@ -838,7 +872,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Você traiu o movimento punk, véi."
+   "Lore": "Você traiu o movimento punk, véi.",
+   "ImgPath": "32dado.jpg"
   },
   {
    "ID": 36,
@@ -862,7 +897,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "33cicarelli.png"
   },
   {
    "ID": 37,
@@ -886,7 +922,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "34danilo.jpg"
   },
   {
    "ID": 38,
@@ -910,7 +947,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Comandante Hamilton, eu quero iBagens!"
+   "Lore": "Comandante Hamilton, eu quero iBagens!",
+   "ImgPath": "35datena.jpg"
   },
   {
    "ID": 39,
@@ -934,7 +972,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "VÁ PRA PUTA QUE O PARIU, PORRA."
+   "Lore": "VÁ PRA PUTA QUE O PARIU, PORRA.",
+   "ImgPath": "36dercy.jpg"
   },
   {
    "ID": 40,
@@ -958,7 +997,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": "Metaaaaaaaaaaaal!"
+   "Lore": "Metaaaaaaaaaaaal!",
+   "ImgPath": "37detonator.jpg"
   },
   {
    "ID": 41,
@@ -982,7 +1022,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Muito bom dia! Primeiro Impacto chegando, um jeito novo, de cara nova!"
+   "Lore": "Muito bom dia! Primeiro Impacto chegando, um jeito novo, de cara nova!",
+   "ImgPath": "38dudu.jpg"
   },
   {
    "ID": 42,
@@ -1006,7 +1047,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "39edir.jpg"
   },
   {
    "ID": 43,
@@ -1030,7 +1072,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "40edson.jpg"
   },
   {
    "ID": 44,
@@ -1054,7 +1097,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Eles se saúdam, e se vão!"
+   "Lore": "Eles se saúdam, e se vão!",
+   "ImgPath": "41eliana.jpg"
   },
   {
    "ID": 45,
@@ -1078,7 +1122,8 @@
     "X": 1.0
    },
    "Gender": "PARCEIROS",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "43ellenpablo.jpg"
   },
   {
    "ID": 46,
@@ -1102,7 +1147,8 @@
     "X": 2.0
    },
    "Gender": "m",
-   "Lore": "Falta tompêro!"
+   "Lore": "Falta tompêro!",
+   "ImgPath": "44jacquin.jpg"
   },
   {
    "ID": 47,
@@ -1126,7 +1172,8 @@
     "X": 0
    },
    "Gender": "PARCEIROS",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "45eterodolfo.jpg"
   },
   {
    "ID": 48,
@@ -1150,7 +1197,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "46evaristo.jpg"
   },
   {
    "ID": 49,
@@ -1174,7 +1222,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "47fabio.jpg"
   },
   {
    "ID": 50,
@@ -1198,7 +1247,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "48fabiojr.jpg"
   },
   {
    "ID": 51,
@@ -1222,7 +1272,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "49fabioporchat.jpg"
   },
   {
    "ID": 52,
@@ -1246,7 +1297,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "50fatima.jpg"
   },
   {
    "ID": 53,
@@ -1270,7 +1322,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "51tiazinhafeiticeira.jpg"
   },
   {
    "ID": 54,
@@ -1294,7 +1347,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "52fernanda.jpg"
   },
   {
    "ID": 55,
@@ -1318,7 +1372,8 @@
     "X": 1.0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "53fernandamontenegro.jpg"
   },
   {
    "ID": 56,
@@ -1342,7 +1397,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Não fica triste não, a gente se vê dentro do bolo."
+   "Lore": "Não fica triste não, a gente se vê dentro do bolo.",
+   "ImgPath": "54fernando.jpg"
   },
   {
    "ID": 57,
@@ -1366,7 +1422,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Fiuk, é você que me faz forças pra viver."
+   "Lore": "Fiuk, é você que me faz forças pra viver.",
+   "ImgPath": "55fiuk.jpg"
   },
   {
    "ID": 58,
@@ -1390,7 +1447,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": "É TETRAAAAAA!!!"
+   "Lore": "É TETRAAAAAA!!!",
+   "ImgPath": "56galvao.jpg"
   },
   {
    "ID": 59,
@@ -1414,7 +1472,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Aqui, agora!"
+   "Lore": "Aqui, agora!",
+   "ImgPath": "57gil.jpg"
   },
   {
    "ID": 60,
@@ -1438,7 +1497,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Conheça o baralho do diabo chamado Yu Gi Oh."
+   "Lore": "Conheça o baralho do diabo chamado Yu Gi Oh.",
+   "ImgPath": "58gilberto.jpg"
   },
   {
    "ID": 61,
@@ -1462,7 +1522,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "59gloria.jpg"
   },
   {
    "ID": 62,
@@ -1486,7 +1547,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Não estou em condições de opinar."
+   "Lore": "Não estou em condições de opinar.",
+   "ImgPath": "60gloriapires.jpg"
   },
   {
    "ID": 63,
@@ -1510,7 +1572,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "61gretchen.jpg"
   },
   {
    "ID": 64,
@@ -1534,7 +1597,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Domingoooo?"
+   "Lore": "Domingoooo?",
+   "ImgPath": "62gugu.jpg"
   },
   {
    "ID": 65,
@@ -1558,7 +1622,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Que gracinha!"
+   "Lore": "Que gracinha!",
+   "ImgPath": "63hebe.jpg"
   },
   {
    "ID": 66,
@@ -1582,7 +1647,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "64helen.png"
   },
   {
    "ID": 67,
@@ -1606,7 +1672,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "65heloisa.jpg"
   },
   {
    "ID": 68,
@@ -1630,7 +1697,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "66fogaca.jpg"
   },
   {
    "ID": 69,
@@ -1654,7 +1722,8 @@
     "X": 0
    },
    "Gender": "PARCEIROS",
-   "Lore": "PUTA QUE O PARIU!"
+   "Lore": "PUTA QUE O PARIU!",
+   "ImgPath": "67her.jpg"
   },
   {
    "ID": 70,
@@ -1678,7 +1747,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Alô Alô, Graças a Deus!"
+   "Lore": "Alô Alô, Graças a Deus!",
+   "ImgPath": "68ines.png"
   },
   {
    "ID": 71,
@@ -1702,7 +1772,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "69ingrid.jpg"
   },
   {
    "ID": 72,
@@ -1726,7 +1797,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Poeeeeeiraaa..."
+   "Lore": "Poeeeeeiraaa...",
+   "ImgPath": "70ivete.jpg"
   },
   {
    "ID": 73,
@@ -1750,7 +1822,8 @@
     "X": 1.0
    },
    "Gender": "f",
-   "Lore": "O Márcio da papelaria... ele deixou um bene pra senhora... aqueles cartazão..."
+   "Lore": "O Márcio da papelaria... ele deixou um bene pra senhora... aqueles cartazão...",
+   "ImgPath": "71jaqueline.jpg"
   },
   {
    "ID": 74,
@@ -1774,7 +1847,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Ela roubou meu caminhão..."
+   "Lore": "Ela roubou meu caminhão...",
+   "ImgPath": "72jimmy.jpg"
   },
   {
    "ID": 75,
@@ -1798,7 +1872,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Beijo do Gordo!"
+   "Lore": "Beijo do Gordo!",
+   "ImgPath": "73jo.jpg"
   },
   {
    "ID": 76,
@@ -1822,7 +1897,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Para, para, para, para, para!"
+   "Lore": "Para, para, para, para, para!",
+   "ImgPath": "73joaokleber.jpg"
   },
   {
    "ID": 77,
@@ -1846,7 +1922,8 @@
     "X": 1.0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "74jose.jpg"
   },
   {
    "ID": 78,
@@ -1870,7 +1947,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Prepare-se, que eu vou lhe usar!"
+   "Lore": "Prepare-se, que eu vou lhe usar!",
+   "ImgPath": "75josewilker.jpg"
   },
   {
    "ID": 79,
@@ -1894,7 +1972,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Ele não sabe brincar, ele é Joselito."
+   "Lore": "Ele não sabe brincar, ele é Joselito.",
+   "ImgPath": "76joselito.jpg"
   },
   {
    "ID": 80,
@@ -1918,7 +1997,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Vamos falar de coisa boa? Vamos falar da Tekpix™, a câmera mais vendida do Brasil!"
+   "Lore": "Vamos falar de coisa boa? Vamos falar da Tekpix™, a câmera mais vendida do Brasil!",
+   "ImgPath": "77juarez.jpg"
   },
   {
    "ID": 81,
@@ -1942,7 +2022,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "78kira.jpg"
   },
   {
    "ID": 82,
@@ -1966,7 +2047,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "79lazaro.jpg"
   },
   {
    "ID": 83,
@@ -1990,7 +2072,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "80leao.jpeg"
   },
   {
    "ID": 84,
@@ -2014,7 +2097,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Eu quero saber, quem foi que desenhou caralinhos voadores na parede do banheiro?"
+   "Lore": "Eu quero saber, quem foi que desenhou caralinhos voadores na parede do banheiro?",
+   "ImgPath": "81lima.jpg"
   },
   {
    "ID": 85,
@@ -2038,7 +2122,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Uba Uba Uba Ê!"
+   "Lore": "Uba Uba Uba Ê!",
+   "ImgPath": "82liminha.jpg"
   },
   {
    "ID": 86,
@@ -2062,7 +2147,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "82lobao.jpg"
   },
   {
    "ID": 87,
@@ -2086,7 +2172,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Vai ganhar uma batedeira Walita™."
+   "Lore": "Vai ganhar uma batedeira Walita™.",
+   "ImgPath": "83lombardi.jpg"
   },
   {
    "ID": 88,
@@ -2110,7 +2197,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Ó coitado!"
+   "Lore": "Ó coitado!",
+   "ImgPath": "84louro.jpg"
   },
   {
    "ID": 89,
@@ -2134,7 +2222,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "85luciana.jpg"
   },
   {
    "ID": 90,
@@ -2158,7 +2247,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Loucura, loucura, loucura!"
+   "Lore": "Loucura, loucura, loucura!",
+   "ImgPath": "86luciano.jpg"
   },
   {
    "ID": 91,
@@ -2182,7 +2272,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Esses negros... maravilhosos!"
+   "Lore": "Esses negros... maravilhosos!",
+   "ImgPath": "87luis.jpg"
   },
   {
    "ID": 92,
@@ -2206,7 +2297,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Assim caminha a humanidade..."
+   "Lore": "Assim caminha a humanidade...",
+   "ImgPath": "88lulu.jpg"
   },
   {
    "ID": 93,
@@ -2230,7 +2322,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "É peruca Silvio Santos!"
+   "Lore": "É peruca Silvio Santos!",
+   "ImgPath": "89maisa.jpg"
   },
   {
    "ID": 94,
@@ -2254,7 +2347,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "90adnet.jpg"
   },
   {
    "ID": 95,
@@ -2278,7 +2372,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Corta pra mim!"
+   "Lore": "Corta pra mim!",
+   "ImgPath": "91marceloresende.jpg"
   },
   {
    "ID": 96,
@@ -2302,7 +2397,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Porque sim, não é resposta!"
+   "Lore": "Porque sim, não é resposta!",
+   "ImgPath": "92marcelotas.jpg"
   },
   {
    "ID": 97,
@@ -2326,7 +2422,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Hora da verdade!"
+   "Lore": "Hora da verdade!",
+   "ImgPath": "93marcia.jpg"
   },
   {
    "ID": 98,
@@ -2350,7 +2447,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "94marcio.jpg"
   },
   {
    "ID": 99,
@@ -2374,7 +2472,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Você não tem envergadura moral para criticar esse jogo!"
+   "Lore": "Você não tem envergadura moral para criticar esse jogo!",
+   "ImgPath": "95marco.jpg"
   },
   {
    "ID": 100,
@@ -2398,7 +2497,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Tá loco!"
+   "Lore": "Tá loco!",
+   "ImgPath": "96marcosmion.jpg"
   },
   {
    "ID": 101,
@@ -2422,7 +2522,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "De frente com Gabi."
+   "Lore": "De frente com Gabi.",
+   "ImgPath": "97marilia.jpg"
   },
   {
    "ID": 102,
@@ -2446,7 +2547,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Cala boca, Magda!"
+   "Lore": "Cala boca, Magda!",
+   "ImgPath": "98miguel.jpg"
   },
   {
    "ID": 103,
@@ -2470,7 +2572,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Agora o ouvinte Sérgio pega no meu pau aqui..."
+   "Lore": "Agora o ouvinte Sérgio pega no meu pau aqui...",
+   "ImgPath": "99milton.jpg"
   },
   {
    "ID": 104,
@@ -2494,7 +2597,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "..."
+   "Lore": "...",
+   "ImgPath": "100mionzinho.jpg"
   },
   {
    "ID": 105,
@@ -2518,7 +2622,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "..."
+   "Lore": "...",
+   "ImgPath": "101misterm.jpg"
   },
   {
    "ID": 106,
@@ -2542,7 +2647,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Desenha um arco-íro!"
+   "Lore": "Desenha um arco-íro!",
+   "ImgPath": "101moises.jpg"
   },
   {
    "ID": 107,
@@ -2566,7 +2672,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "102nazare.jpg"
   },
   {
    "ID": 108,
@@ -2590,7 +2697,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Eu aumento, mas não invento!"
+   "Lore": "Eu aumento, mas não invento!",
+   "ImgPath": "103nelson.jpg"
   },
   {
    "ID": 109,
@@ -2614,7 +2722,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Gentchy!"
+   "Lore": "Gentchy!",
+   "ImgPath": "104netinho.jpg"
   },
   {
    "ID": 110,
@@ -2638,7 +2747,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Isso é uma verrrgonha!"
+   "Lore": "Isso é uma verrrgonha!",
+   "ImgPath": "105neto.jpg"
   },
   {
    "ID": 111,
@@ -2662,7 +2772,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "106ney.jpg"
   },
   {
    "ID": 112,
@@ -2686,7 +2797,8 @@
     "X": 0
    },
    "Gender": "TRUPE",
-   "Lore": "Ô da poltrona!"
+   "Lore": "Ô da poltrona!",
+   "ImgPath": "107trapalhoes.jpg"
   },
   {
    "ID": 113,
@@ -2710,7 +2822,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "108otaviano.jpg"
   },
   {
    "ID": 114,
@@ -2734,7 +2847,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Vem comigo!"
+   "Lore": "Vem comigo!",
+   "ImgPath": "109otavio.jpg"
   },
   {
    "ID": 115,
@@ -2758,7 +2872,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "110pdfabio.jpg"
   },
   {
    "ID": 116,
@@ -2782,7 +2897,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Os animaizinhos subiam de dois em dois..."
+   "Lore": "Os animaizinhos subiam de dois em dois...",
+   "ImgPath": "111pdmarcelo.jpg"
   },
   {
    "ID": 117,
@@ -2806,7 +2922,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Alô criançada, o Gozo chegou..."
+   "Lore": "Alô criançada, o Gozo chegou...",
+   "ImgPath": "117palhacogozo.jpg"
   },
   {
    "ID": 118,
@@ -2830,7 +2947,8 @@
     "X": 1.0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "118paola.jpg"
   },
   {
    "ID": 119,
@@ -2854,7 +2972,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "\"Minha filha Patriciam\" - SANTOS, Silvio."
+   "Lore": "\"Minha filha Patriciam\" - SANTOS, Silvio.",
+   "ImgPath": "119patricia.jpg"
   },
   {
    "ID": 120,
@@ -2878,7 +2997,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Totalmente Excelente!"
+   "Lore": "Totalmente Excelente!",
+   "ImgPath": "120paulobonfa.jpg"
   },
   {
    "ID": 121,
@@ -2902,7 +3022,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "121pcsiqueira.jpg"
   },
   {
    "ID": 122,
@@ -2926,7 +3047,8 @@
     "X": 0
    },
    "Gender": "PARCEIROS",
-   "Lore": "É uma cilada, Bino!"
+   "Lore": "É uma cilada, Bino!",
+   "ImgPath": "122pedro_ebino.jpg"
   },
   {
    "ID": 123,
@@ -2950,7 +3072,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Vem ser feliz aqui fora!"
+   "Lore": "Vem ser feliz aqui fora!",
+   "ImgPath": "122pedrobial.png"
   },
   {
    "ID": 124,
@@ -2974,7 +3097,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Pedro de Lara ia laralalalaia lalalala lalalalalaaa lara..."
+   "Lore": "Pedro de Lara ia laralalalaia lalalala lalalalalaaa lara...",
+   "ImgPath": "123pedrodelara.jpg"
   },
   {
    "ID": 125,
@@ -2998,7 +3122,8 @@
     "X": 2.0
    },
    "Gender": "f",
-   "Lore": "Ponto P."
+   "Lore": "Ponto P.",
+   "ImgPath": "124penelope.jpg"
   },
   {
    "ID": 126,
@@ -3022,7 +3147,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Você ganhou um Jogo da Vida!"
+   "Lore": "Você ganhou um Jogo da Vida!",
+   "ImgPath": "125priscilla.jpg"
   },
   {
    "ID": 127,
@@ -3046,7 +3172,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Pela última vez: não é Charizard!"
+   "Lore": "Pela última vez: não é Charizard!",
+   "ImgPath": "127raquel.jpg"
   },
   {
    "ID": 128,
@@ -3070,7 +3197,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "126rafinha.jpg"
   },
   {
    "ID": 129,
@@ -3094,7 +3222,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Teste de DNA, parabéns, você é o pai!"
+   "Lore": "Teste de DNA, parabéns, você é o pai!",
+   "ImgPath": "128ratinho.jpg"
   },
   {
    "ID": 130,
@@ -3118,7 +3247,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Pegue o seu banquinho, e saia de mansinho..."
+   "Lore": "Pegue o seu banquinho, e saia de mansinho...",
+   "ImgPath": "129raulgil.jpg"
   },
   {
    "ID": 131,
@@ -3142,7 +3272,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "130reginacase.png"
   },
   {
    "ID": 132,
@@ -3166,7 +3297,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "131renatafan.jpg"
   },
   {
    "ID": 133,
@@ -3190,7 +3322,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": "Ô Malafaia, vai procurar uma rola. Não me enche o saco."
+   "Lore": "Ô Malafaia, vai procurar uma rola. Não me enche o saco.",
+   "ImgPath": "132ricardoboechat.jpg"
   },
   {
    "ID": 134,
@@ -3214,7 +3347,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Você está demitido!"
+   "Lore": "Você está demitido!",
+   "ImgPath": "134justus.jpg"
   },
   {
    "ID": 135,
@@ -3238,7 +3372,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "135rodrigofaro.png"
   },
   {
    "ID": 136,
@@ -3262,7 +3397,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": "Homão da porra."
+   "Lore": "Homão da porra.",
+   "ImgPath": "136rodrigohilbert.jpg"
   },
   {
    "ID": 137,
@@ -3286,7 +3422,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "A gente não sabemos escolher presidente."
+   "Lore": "A gente não sabemos escolher presidente.",
+   "ImgPath": "137roger.jpg"
   },
   {
    "ID": 138,
@@ -3310,7 +3447,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "WAALLAAA!"
+   "Lore": "WAALLAAA!",
+   "ImgPath": "138ronaldgolias.jpg"
   },
   {
    "ID": 139,
@@ -3334,7 +3472,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": "Assim não vai dar Galvão."
+   "Lore": "Assim não vai dar Galvão.",
+   "ImgPath": "139ronaldo.jpg"
   },
   {
    "ID": 140,
@@ -3358,7 +3497,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "\"Roque, vem pra cá\" - SANTOS, Silvio."
+   "Lore": "\"Roque, vem pra cá\" - SANTOS, Silvio.",
+   "ImgPath": "140roque.jpg"
   },
   {
    "ID": 141,
@@ -3382,7 +3522,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Estou seguindo a Jesus Cristo™, desse caminho, eu não desisto..."
+   "Lore": "Estou seguindo a Jesus Cristo™, desse caminho, eu não desisto...",
+   "ImgPath": "141rrsoares.png"
   },
   {
    "ID": 142,
@@ -3406,7 +3547,8 @@
     "X": 0
    },
    "Gender": "PARCEIROS",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "142ruievani.jpg"
   },
   {
    "ID": 143,
@@ -3430,7 +3572,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "143sabrinasato.jpg"
   },
   {
    "ID": 144,
@@ -3454,7 +3597,8 @@
     "X": 0
    },
    "Gender": "TRUPE",
-   "Lore": "A família do Largo do Arouche."
+   "Lore": "A família do Largo do Arouche.",
+   "ImgPath": "144saidebaixo.jpg"
   },
   {
    "ID": 145,
@@ -3478,7 +3622,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Que deselegante!"
+   "Lore": "Que deselegante!",
+   "ImgPath": "145sandraannenberg.jpg"
   },
   {
    "ID": 146,
@@ -3502,7 +3647,8 @@
     "X": 0
    },
    "Gender": "PARCEIROS",
-   "Lore": "Outono é sempre igual... as folhas caem no quintal..."
+   "Lore": "Outono é sempre igual... as folhas caem no quintal...",
+   "ImgPath": "146sandyjunior.png"
   },
   {
    "ID": 147,
@@ -3526,7 +3672,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Fala, garoto!"
+   "Lore": "Fala, garoto!",
+   "ImgPath": "147serginho.jpg"
   },
   {
    "ID": 148,
@@ -3550,7 +3697,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Hoje, no Globo Reporter."
+   "Lore": "Hoje, no Globo Reporter.",
+   "ImgPath": "148chapelin.jpg"
   },
   {
    "ID": 149,
@@ -3574,7 +3722,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": "Glu Glu, Raaá!"
+   "Lore": "Glu Glu, Raaá!",
+   "ImgPath": "150malandro.jpg"
   },
   {
    "ID": 150,
@@ -3598,7 +3747,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Você paga aluguel? Pega esse aluguel e oferece 30% para o Senhor™ lhe abrir as portas."
+   "Lore": "Você paga aluguel? Pega esse aluguel e oferece 30% para o Senhor™ lhe abrir as portas.",
+   "ImgPath": "151silas.jpg"
   },
   {
    "ID": 151,
@@ -3622,7 +3772,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Olho no lance!"
+   "Lore": "Olho no lance!",
+   "ImgPath": "152silvioluiz.jpg"
   },
   {
    "ID": 152,
@@ -3646,7 +3797,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "153sonia.jpg"
   },
   {
    "ID": 153,
@@ -3670,7 +3822,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Papito!"
+   "Lore": "Papito!",
+   "ImgPath": "154supla.jpg"
   },
   {
    "ID": 154,
@@ -3694,7 +3847,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": "Eu não tenho paciência para uma pessoa que está começando."
+   "Lore": "Eu não tenho paciência para uma pessoa que está começando.",
+   "ImgPath": "155suzanavieira.jpg"
   },
   {
    "ID": 155,
@@ -3718,7 +3872,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "156tadeu.jpg"
   },
   {
    "ID": 156,
@@ -3742,7 +3897,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "157tata.jpg"
   },
   {
    "ID": 157,
@@ -3766,7 +3922,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Guns, Whitesnake, Bon Jovi... interessante..."
+   "Lore": "Guns, Whitesnake, Bon Jovi... interessante...",
+   "ImgPath": "158tayrone.jpg"
   },
   {
    "ID": 158,
@@ -3790,7 +3947,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "159tiagoleifert.jpg"
   },
   {
    "ID": 159,
@@ -3814,7 +3972,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Abestado!"
+   "Lore": "Abestado!",
+   "ImgPath": "160tiririca.jpg"
   },
   {
    "ID": 160,
@@ -3838,7 +3997,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "160tomcavalcante.jpg"
   },
   {
    "ID": 161,
@@ -3862,7 +4022,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Por isso, eu só compro carne Friboi™."
+   "Lore": "Por isso, eu só compro carne Friboi™.",
+   "ImgPath": "161tony.jpg"
   },
   {
    "ID": 162,
@@ -3886,7 +4047,8 @@
     "X": 0
    },
    "Gender": "f",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "162vera.jpg"
   },
   {
    "ID": 163,
@@ -3910,7 +4072,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Gordo malparido!"
+   "Lore": "Gordo malparido!",
+   "ImgPath": "163wagner.jpg"
   },
   {
    "ID": 164,
@@ -3934,7 +4097,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": "Ligue djá!"
+   "Lore": "Ligue djá!",
+   "ImgPath": "164walter.jpg"
   },
   {
    "ID": 165,
@@ -3958,7 +4122,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Boa noite."
+   "Lore": "Boa noite.",
+   "ImgPath": "165bonner.jpg"
   },
   {
    "ID": 166,
@@ -3982,7 +4147,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Zelda Merda, digo Zelda Melo..."
+   "Lore": "Zelda Merda, digo Zelda Melo...",
+   "ImgPath": "166waack.jpg"
   },
   {
    "ID": 167,
@@ -4006,7 +4172,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Rapazzz!"
+   "Lore": "Rapazzz!",
+   "ImgPath": "167xaropinho.jpg"
   },
   {
    "ID": 168,
@@ -4030,7 +4197,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "Pleysteixo, pleysteixo!"
+   "Lore": "Pleysteixo, pleysteixo!",
+   "ImgPath": "168yudi.jpg"
   },
   {
    "ID": 169,
@@ -4054,7 +4222,8 @@
     "X": 0
    },
    "Gender": "m",
-   "Lore": "A praga do dia!"
+   "Lore": "A praga do dia!",
+   "ImgPath": "169zedocaixao.jpg"
   },
   {
    "ID": 170,
@@ -4078,7 +4247,8 @@
     "X": 1.0
    },
    "Gender": "m",
-   "Lore": ""
+   "Lore": "",
+   "ImgPath": "170zecacamargo.jpg"
   }
  ],
  "Champions": [

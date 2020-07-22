@@ -3,7 +3,7 @@ from random import sample
 
 class Die:
     def __init__(self):
-        self.faces = ['X1', 'X2', 'X3', 'X4', 'X5', 'X1/X2']
+        self.faces = ['X1', 'X2', 'X3', 'X4', 'X5', 'X4/X5']
         self.upper_face = None
         self.roll()
 

@@ -74,7 +74,8 @@ def parse_cards(sheet):
                 "X": pfloat(c['X'])
             },
             "Gender": c['Gender'],
-            "Lore": c['Lore']
+            "Lore": c['Lore'],
+            "ImgPath": c['ImgPath']
         } for c in sheet[2:]
     ]
     return card_list
