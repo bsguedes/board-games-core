@@ -1,5 +1,5 @@
 from base_player import PlayerBase
-from typing import List
+from typing import List, Callable
 
 
 class GameState:
@@ -7,6 +7,22 @@ class GameState:
         self.name: str = name
         self.player: PlayerBase = current_player
         self.args = args
+        self.continuations: List[Callable[[], None]] = []
+        self.cleanups: List[Callable[[], None]] = []
+
+    def run_continuations(self):
+        for c in self.continuations:
+            c()
+
+    def run_cleanups(self):
+        for c in self.cleanups:
+            c()
+
+    def add_continuation(self, continuation_handler: Callable[[], None]):
+        self.continuations.append(continuation_handler)
+
+    def add_state_cleanup(self, cleanup_handler: Callable[[], None]):
+        self.cleanups.append(cleanup_handler)
 
 
 class StateMachine:

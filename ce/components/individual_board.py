@@ -14,10 +14,10 @@ class IndividualBoard:
         self.MidRow: List[BoardSlot] = [BoardSlot() for _ in range(ROW_SIZE)]
         self.BotRow: List[BoardSlot] = [BoardSlot() for _ in range(ROW_SIZE)]
 
-    def add_card_to_row(self, card_id: int, row: str):
+    def add_card_to_row(self, card: Card, row: str):
         index = self.first_free_index(row)
         slot: BoardSlot = self.rows(row)[index]
-        slot.Card = card_id
+        slot.Card = card
 
     def first_free_index(self, row: str) -> int:
         for i in range(ROW_SIZE):
@@ -57,8 +57,17 @@ class IndividualBoard:
     def total_cash(self) -> int:
         return self.cash_in_row('Top') + self.cash_in_row('Mid') + self.cash_in_row('Bot')
 
-    def cards_with_cash(self) -> List[Optional[int]]:
-        return [slot.Card for row in ROWS for slot in self.rows(row) if slot.Cash > 0]
+    def cash_space(self) -> int:
+        return self.max_cash() - self.total_cash()
 
-    def cards_in_board(self) -> List[Optional[int]]:
-        return [slot.Card for row in ROWS for slot in self.rows(row)]
+    def max_cash(self) -> int:
+        return sum([slot.Card.MaxCash for row in ROWS for slot in self.rows(row) if slot.Card is not None])
+
+    def cards_with_cash(self) -> List[Card]:
+        return [slot.Card for row in ROWS for slot in self.rows(row) if slot.Cash > 0 and slot.Card is not None]
+
+    def slots_with_cards_in_board(self) -> List[BoardSlot]:
+        return [slot for row in ROWS for slot in self.rows(row) if slot.Card is not None]
+
+    def cards_in_board(self) -> List[Card]:
+        return [slot.Card for row in ROWS for slot in self.rows(row) if slot.Card is not None]

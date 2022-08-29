@@ -1,10 +1,10 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 
 
 @dataclass
 class PlayableCard:
     ID: int
-    Row: str
-    CashCost: int
-    TalentCost: List[str]
+    ValidRows: List[str]
+    CashCost: List[int]
+    TalentCost: Optional[List[str]]

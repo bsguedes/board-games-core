@@ -16,10 +16,11 @@ class Stage:
                 self.on_stage.remove(die)
                 self.off_stage.append(die)
                 break
-        if len(self.on_stage) == DICE_COUNT:
+        if len(self.off_stage) == DICE_COUNT:
             self.reroll_all_dice()
 
     def reroll_all_dice(self) -> None:
+        self.dice = [Die() for _ in range(DICE_COUNT)]
         self.on_stage = self.dice
         for die in self.dice:
             die.roll()

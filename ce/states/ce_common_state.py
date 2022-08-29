@@ -5,7 +5,8 @@ from ce.components.objective_board import ObjectiveBoard
 from ce.components.deck import Deck
 from ce.components.stage import Stage
 from ce.player import CEPlayer
-from typing import List
+from typing import List, Dict, Any
+from state_machine import GameState
 
 
 class CECommonState(PlayerState):
@@ -23,7 +24,7 @@ class CECommonState(PlayerState):
     def as_dict_game(self):
         payload = {
             'DeckCount': self.deck.number_of_cards(),
-            'Contracts': [c.ID for c in self.deck.contracts],
+            'Contracts': [None if c is None else c.ID for c in self.deck.contracts],
             'BonusDeckCount': self.bonus_deck_count,
             'ObjectiveBoard': [o.ID for o in self.objective_board.round_objectives],
             'Stage': {
@@ -36,7 +37,27 @@ class CECommonState(PlayerState):
                 'Champion': p.champion.Name,
                 'Talents': to_dict(p.talents),
                 'HandCount': len(p.hand),
-                'Board': to_dict(p.board),
+                'Board': {
+                    'ChampionLevel': p.board.ChampionLevel,
+                    'TopRow': [{
+                        'Card': s.Card.ID if s.Card is not None else None,
+                        'Cash': s.Cash,
+                        'Cached': s.Cached,
+                        'Talents': to_dict(s.Talents)
+                    } for s in p.board.TopRow],
+                    'MidRow': [{
+                        'Card': s.Card.ID if s.Card is not None else None,
+                        'Cash': s.Cash,
+                        'Cached': s.Cached,
+                        'Talents': to_dict(s.Talents)
+                    } for s in p.board.MidRow],
+                    'BotRow': [{
+                        'Card': s.Card.ID if s.Card is not None else None,
+                        'Cash': s.Cash,
+                        'Cached': s.Cached,
+                        'Talents': to_dict(s.Talents)
+                    } for s in p.board.BotRow],
+                },
                 'BonusCardCount': len(p.bonus_cards),
                 'Round': p.current_round,
                 'Turn': p.current_turn
@@ -45,13 +66,36 @@ class CECommonState(PlayerState):
                 'Champion': self.ce_player.champion.Name,
                 'Talents': to_dict(self.ce_player.talents),
                 'Hand': [c.ID for c in self.ce_player.hand],
-                'Board': to_dict(self.ce_player.board),
+                'Board': {
+                    'ChampionLevel': self.ce_player.board.ChampionLevel,
+                    'TopRow': [{
+                        'Card': s.Card.ID if s.Card is not None else None,
+                        'Cash': s.Cash,
+                        'Cached': s.Cached,
+                        'Talents': to_dict(s.Talents)
+                    } for s in self.ce_player.board.TopRow],
+                    'MidRow': [{
+                        'Card': s.Card.ID if s.Card is not None else None,
+                        'Cash': s.Cash,
+                        'Cached': s.Cached,
+                        'Talents': to_dict(s.Talents)
+                    } for s in self.ce_player.board.MidRow],
+                    'BotRow': [{
+                        'Card': s.Card.ID if s.Card is not None else None,
+                        'Cash': s.Cash,
+                        'Cached': s.Cached,
+                        'Talents': to_dict(s.Talents)
+                    } for s in self.ce_player.board.BotRow],
+                },
                 'BonusCards': [c.ID for c in self.ce_player.bonus_cards],
                 'Round': self.ce_player.current_round,
                 'Turn': self.ce_player.current_turn
             }
         }
         return payload
+
+    def ce_apply_option(self, player: PlayerBase, ce_player: CEPlayer, option: Dict[str, Any]) -> List[GameState]:
+        pass
 
     def your_options_game(self):
         pass

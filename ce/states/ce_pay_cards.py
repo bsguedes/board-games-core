@@ -12,8 +12,8 @@ class CEPayCards(CECommonState):
     def __init__(self, player: PlayerBase, current_player: PlayerBase,
                  deck: Deck, bonus_num: int, obj_board: ObjectiveBoard,
                  stage: Stage, player_objects: List[CEPlayer], args: Dict[str, Any]):
-        CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
         self.card_count = args['Count']
+        CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
 
     def as_dict_game(self):
         state_contents = {

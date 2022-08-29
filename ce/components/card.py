@@ -17,7 +17,6 @@ class Card:
     Ability: Ability
     Cost: Dict[str, float]
     Gender: str
-    CurrentCash: int = 0
 
     def cost_type(self) -> str:
         if all(c == 0 for t, c in self.Cost.items()):

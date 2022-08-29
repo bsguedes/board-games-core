@@ -4,25 +4,30 @@ from ce.components.objective_board import ObjectiveBoard
 from ce.components.deck import Deck
 from ce.components.stage import Stage
 from ce.player import CEPlayer
-from typing import List
+from typing import List, Dict, Any
+from state_machine import GameState
 
 
 class CEEarnMoneyPayingTalent(CECommonState):
     def __init__(self, player: PlayerBase, current_player: PlayerBase,
                  deck: Deck, bonus_num: int, obj_board: ObjectiveBoard,
-                 stage: Stage, player_objects: List[CEPlayer]):
+                 stage: Stage, player_objects: List[CEPlayer], args: Dict[str, Any]):
         CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
 
     def your_options_game(self):
-        options = []
-        for card in self.ce_player.hand:
-            if card.CurrentCash < card.MaxCash:
-                for talent in self.ce_player.talents.talents_as_array():
-                    options.append({
-                        'Action': 'PlaceMoneyPayingTalent',
-                        'Card': card.ID,
-                        'Talent': talent
-                    })
-        if len(options) > 0:
-            options.append({'Action': 'Cancel'})
+        options = [{
+            'Action': 'Cancel'
+        }]
+        for talent in self.ce_player.talents.talents_as_array():
+            options.append({
+                'Action': 'DiscardTalent',
+                'Talent': talent
+            })
         return options
+
+    def ce_apply_option(self, player: PlayerBase, ce_player: CEPlayer, option: Dict[str, Any]) -> List[GameState]:
+        new_states = []
+        if option['Action'] == 'DiscardTalent':
+            ce_player.talents.add_talent(option['Talent'], -1)
+            new_states = [GameState('EarnMoney', player)]
+        return new_states

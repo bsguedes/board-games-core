@@ -31,11 +31,15 @@ class CEPlayer:
         for card in bonuses:
             self.give_bonus_card(card)
 
-    def playable_cards(self) -> List[PlayableCard]:
+    def playable_cards(self, show_cost=False) -> List[PlayableCard]:
         cards = []
-        for row in ROWS:
-            for card in self.hand:
+        for card in self.hand:
+            valid_rows = []
+            costs = []
+            for row in ROWS:
                 if self.board.playable(card, row) and self.talents.playable(card):
-                    for method in self.talents.payment_methods(card):
-                        cards.append(PlayableCard(card.ID, row, self.board.row_cost(row), method))
+                    valid_rows.append(row)
+                    costs.append(self.board.row_cost(row))
+            if len(valid_rows) > 0 and not show_cost:
+                cards.append(PlayableCard(card.ID, valid_rows, costs, None))
         return cards

@@ -4,23 +4,28 @@ from ce.components.objective_board import ObjectiveBoard
 from ce.components.deck import Deck
 from ce.components.stage import Stage
 from ce.player import CEPlayer
-from typing import List
+from typing import List, Dict, Any
+from state_machine import GameState
 
 
 class CEEarnMoney(CECommonState):
     def __init__(self, player: PlayerBase, current_player: PlayerBase,
                  deck: Deck, bonus_num: int, obj_board: ObjectiveBoard,
-                 stage: Stage, player_objects: List[CEPlayer]):
+                 stage: Stage, player_objects: List[CEPlayer], args: Dict[str, Any]):
         CECommonState.__init__(self, player, current_player, deck, bonus_num, obj_board, stage, player_objects)
 
     def your_options_game(self):
         options = []
-        for card in self.ce_player.hand:
-            if card.CurrentCash < card.MaxCash:
+        for slot in self.ce_player.board.slots_with_cards_in_board():
+            if slot.Cash < slot.Card.MaxCash:
                 options.append({
                     'Action': 'PlaceMoney',
-                    'Card': card.ID
+                    'Card': slot.Card.ID
                 })
-        if len(options) > 0:
-            options.append({'Action': 'Cancel'})
         return options
+
+    def ce_apply_option(self, player: PlayerBase, ce_player: CEPlayer, option: Dict[str, Any]) -> List[GameState]:
+        if option['Action'] == 'PlaceMoney':
+            slot = next(s for s in ce_player.board.slots_with_cards_in_board() if s.Card.ID == option['Card'])
+            slot.Cash += 1
+        return []

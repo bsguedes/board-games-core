@@ -63,6 +63,7 @@ class Game(ABC):
         if valid:
             option = next(ob.Option for ob in self.options_from_current_state if ob.OptionCode == option_code)
             self.apply_option_on_current_state_game(player, option, self.state_machine.current_state())
+            self.state_machine.current_state().run_continuations()
             self.evaluate_next_state()
         return valid
 
@@ -72,6 +73,7 @@ class Game(ABC):
             self.state_machine.pop()
             next_state = self.state_machine.current_state()
             if next_state is not None:
+                next_state.run_cleanups()
                 next_player = next_state.player
                 n = self.state_machine.index
                 for p in self.players:
